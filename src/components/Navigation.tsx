@@ -12,20 +12,28 @@ const navigationLinks = [
     {path: "sponsorzy", label: "Sponsorzy"},
 ];
 
-export const Navigation = () => {
+interface NavigationProps {
+    showLogo?: boolean
+}
+
+export const Navigation = ({showLogo = true}: NavigationProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
         <>
             <nav className="sticky top-0 z-10 bg-primary text-white">
                 <div className="flex justify-between items-center p-4">
-                    <img src="" alt="Logo"
-                         // TODO: This logo behaviour is only for main page, on other pages logo should always be visible
-                         className={
-                             `transition-all duration-300 ease-out w-16
-                            ${menuOpen ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`
-                         }
-                    />
+                    <NavLink
+                        to="/"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        <img src="" alt="Logo"
+                             className={
+                                 `transition-all duration-100 ease-out w-16
+                                ${showLogo || menuOpen ? "opacity-100" : "opacity-0"}`
+                             }
+                        />
+                    </NavLink>
                     <div
                         className="flex flex-col justify-center items-center w-10 h-10 cursor-pointer group"
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -56,7 +64,7 @@ export const Navigation = () => {
                             key={link.path}
                             to={link.path}
                             className={
-                                `transition-all duration-300 ease-out hover:text-accent m-4
+                                `p-4 transition-all duration-300 ease-out hover:text-accent
                                 ${menuOpen ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`
                             }
                             style={{transitionDelay: `${index * 50}ms`}}

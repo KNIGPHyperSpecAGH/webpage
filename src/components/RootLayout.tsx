@@ -1,15 +1,18 @@
-import {Outlet} from "react-router";
+import {Outlet, useMatches} from "react-router";
 import * as React from "react";
 import {Navigation} from "./Navigation.tsx";
 
-interface props {
+interface RootProps {
     children?: React.ReactNode;
 }
 
-export const RootLayout = ({children}: props) => {
+export const RootLayout = ({children}: RootProps) => {
+    const matches = useMatches();
+    const isRootPath = matches.every(match => match.pathname === '/');
+
     return (
         <>
-            <Navigation/>
+            <Navigation showLogo={!isRootPath}/>
 
             <hr/>
             {children ? {children} : null}
