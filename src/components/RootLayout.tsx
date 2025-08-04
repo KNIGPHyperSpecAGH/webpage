@@ -15,7 +15,6 @@ export const RootLayout = ({children}: RootProps) => {
     return (
         <>
             <Navigation showLogo={!isRootPath}/>
-            <Button onClick={() => {}}>Click me</Button>
             <hr/>
             {children ? {children} : null}
             {<Outlet/>}
