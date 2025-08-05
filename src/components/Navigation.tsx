@@ -53,7 +53,7 @@ export const Navigation = ({ showLogo = true }: NavigationProps) => {
             ></span>
           </div>
           {/* Second navigation for larger screens */}
-          <div className="hidden md:flex items-center justify-between w-full px-10 h-16">
+          <div className="hidden md:flex items-center justify-between w-full px-10">
             <div className="flex gap-20">
               {navigationLinks.map((link) => (
                 <NavLink key={link.path} to={link.path} className="contents">
