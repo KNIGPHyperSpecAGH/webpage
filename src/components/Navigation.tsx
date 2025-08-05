@@ -1,9 +1,8 @@
 import {useState} from "react";
 import {NavLink} from "react-router";
-
+import {Button} from "./Button"; // Import your Button
 
 const navigationLinks = [
-    // {path: "/", label: "strona glowna"},
     {path: "aktualnosci", label: "Aktualności"},
     {path: "projekty", label: "Projekty"},
     {path: "o-nas", label: "O nas"},
@@ -33,26 +32,40 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                     >
                         <img src="" alt="Logo"/>
                     </NavLink>
+                    {/* Hamburger menu for mobile */}
                     <div
-                        className="z-12 flex flex-col justify-center items-center w-10 h-10 cursor-pointer group"
+                        className="z-12 flex flex-col justify-center items-center w-10 h-10 cursor-pointer group md:hidden"
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
                         <span className={
                             `block w-8 h-1 bg-white rounded transition-all duration-300 ease-in-out
                             ${menuOpen ? "rotate-45 translate-y-3" : ""}`
                         }></span>
-
                         <span className={`
                             block w-8 h-1 bg-white rounded my-2 transition-all duration-300 ease-in-out 
                             ${menuOpen ? "opacity-0" : ""}`
                         }></span>
-
                         <span className={
                             `block w-8 h-1 bg-white rounded transition-all duration-300 ease-in-out 
                             ${menuOpen ? "-rotate-45 -translate-y-3" : ""}`
                         }></span>
                     </div>
+                    {/* Second navigation for larger screens */}
+                    <div className="hidden md:flex gap-20 mx-auto w-fit">
+                        {navigationLinks.map(link => (
+                            <NavLink
+                                key={link.path}
+                                to={link.path}
+                                className="contents"
+                            >
+                                {({ isActive }) => (
+                                    <Button active={isActive}>{link.label}</Button>
+                                )}
+                            </NavLink>
+                        ))}
+                    </div>
                 </div>
+                {/* Mobile menu */}
                 <div
                     className={
                         `fixed top-0 left-0 z-11 w-full h-screen bg-primary flex flex-col pt-24
@@ -75,7 +88,6 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                             {link.label}
                         </NavLink>
                     ))}
-
                     <hr className="m-10 mt-5"/>
                 </div>
             </nav>
