@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {NavLink} from "react-router";
 import {Button} from "./Button"; // Import your Button
+import {Socials} from "./Socials.tsx";
 
 const navigationLinks = [
     {path: "aktualnosci", label: "Aktualności"},
@@ -12,11 +13,11 @@ const navigationLinks = [
 ];
 
 interface NavigationProps {
-    showLogo?: boolean
+  showLogo?: boolean;
 }
 
-export const Navigation = ({showLogo = true}: NavigationProps) => {
-    const [menuOpen, setMenuOpen] = useState(false);
+export const Navigation = ({ showLogo = true }: NavigationProps) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
     return (
         <>
@@ -88,7 +89,11 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                             {link.label}
                         </NavLink>
                     ))}
-                    <hr className="m-10 mt-5"/>
+                  
+                    <hr className="m-5 mt-5" />
+
+                    {/* Socials component */}
+                    <Socials />
                 </div>
             </nav>
         </>
