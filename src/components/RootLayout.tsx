@@ -1,7 +1,6 @@
 import {Outlet, useMatches} from "react-router";
 import * as React from "react";
 import {Navigation} from "./Navigation.tsx";
-import {Button} from "./Button.tsx";
 import {Footer} from "./Footer.tsx";
 
 interface RootProps {
