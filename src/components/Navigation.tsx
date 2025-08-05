@@ -3,7 +3,6 @@ import { NavLink } from "react-router";
 import { Button } from "./Button"; // Import your Button
 import { Socials } from "./Socials.tsx";
 
-
 const navigationLinks = [
   { path: "aktualnosci", label: "Aktualności" },
   { path: "projekty", label: "Projekty" },
@@ -14,11 +13,11 @@ const navigationLinks = [
 ];
 
 interface NavigationProps {
-    showLogo?: boolean
+  showLogo?: boolean;
 }
 
-export const Navigation = ({showLogo = true}: NavigationProps) => {
-    const [menuOpen, setMenuOpen] = useState(false);
+export const Navigation = ({ showLogo = true }: NavigationProps) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
@@ -54,14 +53,17 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
             ></span>
           </div>
           {/* Second navigation for larger screens */}
-          <div className="hidden md:flex gap-20 mx-auto w-fit">
-            {navigationLinks.map((link) => (
-              <NavLink key={link.path} to={link.path} className="contents">
-                {({ isActive }) => (
-                  <Button active={isActive}>{link.label}</Button>
-                )}
-              </NavLink>
-            ))}
+          <div className="hidden md:flex items-center justify-between w-full px-10 h-16">
+            <div className="flex gap-20">
+              {navigationLinks.map((link) => (
+                <NavLink key={link.path} to={link.path} className="contents">
+                  {({ isActive }) => (
+                    <Button active={isActive}>{link.label}</Button>
+                  )}
+                </NavLink>
+              ))}
+            </div>
+            <Socials />
           </div>
         </div>
         {/* Mobile menu */}
@@ -70,30 +72,36 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                          text-center font-text text-3xl font-bold
                          transition-all duration-300 ease-out origin-top
 
-                        ${menuOpen ? "opacity-100 scale-y-100" : "opacity-0 pointer-events-none scale-y-0"}`
-                    }
-                >
-                    {navigationLinks.map((link, index) => (
-                        <NavLink
-                            key={link.path}
-                            to={link.path}
-                            className={
-                                `p-4 transition-all ease-out hover:text-accent
-                                ${menuOpen ? "translate-x-0 opacity-100 duration-300" : "-translate-x-10 opacity-0 duration-50"}`
-                            }
-                            style={{transitionDelay: `${menuOpen ? (index * 50) + 100 : 0}ms`}}
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            {link.label}
-                        </NavLink>
-                    ))}
-                    <hr className="m-5 mt-5" />
+                        ${
+                          menuOpen
+                            ? "opacity-100 scale-y-100"
+                            : "opacity-0 pointer-events-none scale-y-0"
+                        }`}
+        >
+          {navigationLinks.map((link, index) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={`p-4 transition-all ease-out hover:text-accent
+                                ${
+                                  menuOpen
+                                    ? "translate-x-0 opacity-100 duration-300"
+                                    : "-translate-x-10 opacity-0 duration-50"
+                                }`}
+              style={{
+                transitionDelay: `${menuOpen ? index * 50 + 100 : 0}ms`,
+              }}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+          <hr className="m-5 mt-5" />
 
-                    {/* Socials component */}
-                    <Socials />
-                </div>
-            </nav>
-        </>
-    );
+          {/* Socials component */}
+          <Socials />
+        </div>
+      </nav>
+    </>
+  );
 };
-

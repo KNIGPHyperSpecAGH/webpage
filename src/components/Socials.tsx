@@ -2,7 +2,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-// Użycie zmiennych CSS z @theme przez style inline
 export const Socials = () => (
   <div className="flex justify-center space-x-3">
     <a
@@ -10,7 +9,7 @@ export const Socials = () => (
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Facebook"
-      className="group"
+      className="group flex items-center justify-center"
       style={{ fontSize: "3rem" }}
     >
       <FacebookIcon
@@ -28,7 +27,7 @@ export const Socials = () => (
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Instagram"
-      className="group"
+      className="group flex items-center justify-center"
       style={{ fontSize: "3rem" }}
     >
       <InstagramIcon
@@ -46,7 +45,7 @@ export const Socials = () => (
       target="_blank"
       rel="noopener noreferrer"
       aria-label="LinkedIn"
-      className="group"
+      className="group flex items-center justify-center"
       style={{ fontSize: "3rem" }}
     >
       <LinkedInIcon
