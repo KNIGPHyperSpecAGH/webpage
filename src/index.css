@@ -5,11 +5,28 @@
 @theme {
     /* Custom colors */
     --color-primary: #03382d;
-    --color-secondary: #098e72;
+    --color-secondary: #095142; /* i changed it to color defined in figma */
+    --color-element: #027961;
     --color-white: #f2f0ef;
     --color-black: #333333;
     --color-accent: #c57b57;
+    --color-red: #cc2128;
     /* Custom font families */
     --font-header: 'Domine', serif;
     --font-text: 'Lato', sans-serif;
+}
+
+/*font for projectspage*/
+.font-content {
+    font-family: var(--font-text);
+    font-size: clamp(0rem, 1.5vw, 1.5rem);
+    color: var(--color-white);
+    text-align: justify;
+}
+/*font for projectspage*/
+.font-projheader {
+    font-family: var(--font-text);
+    font-size: clamp(0rem, 2.5vw, 2.5rem);
+    color: var(--color-white);
+    font-weight: 800;
 }

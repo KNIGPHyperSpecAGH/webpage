@@ -1,5 +1,5 @@
 export const SponsorsPage = () => {
     return (
-        <>SponsorsPage</>
+        <div className="bg-red-500">test</div>
     );
 };
