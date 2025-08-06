@@ -16,6 +16,7 @@
     --font-text: 'Lato', sans-serif;
 }
 
+/*TODO remove this style*/
 /*font for projectspage*/
 .font-content {
     font-family: var(--font-text);
@@ -23,10 +24,17 @@
     color: var(--color-white);
     text-align: justify;
 }
+
 /*font for projectspage*/
 .font-projheader {
     font-family: var(--font-text);
     font-size: clamp(0rem, 2.5vw, 2.5rem);
     color: var(--color-white);
     font-weight: 800;
+}
+
+body {
+    background-color: var(--color-secondary);
+    font-family: var(--font-text), sans-serif;
+    color: var(--color-white);
 }
