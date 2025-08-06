@@ -1,9 +1,12 @@
 import React from "react";
+import {Socials} from "./Socials.tsx";
 
 const Footer: React.FC = () => (
     <footer className="bg-black text-white py-6  w-full">
         <div className="container mx-auto px-4 flex flex-col items-center space-y-4">
+            <Socials/>
             <span className="text-sm font-text text-white">&copy; {new Date().getFullYear()} HyperSpec AGH. All rights reserved.</span>
+            
         </div>
     </footer>
 );
