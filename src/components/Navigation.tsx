@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router";
 import { Button } from "./Button"; // Import your Button
 import { Socials } from "./Socials.tsx";
+import logo from "../assets/logo.png";
 
 const navigationLinks = [
   { path: "aktualnosci", label: "Aktualności" },
@@ -31,7 +32,7 @@ export const Navigation = ({ showLogo = true }: NavigationProps) => {
                             }`}
             onClick={() => setMenuOpen(false)}
           >
-            <img src="" alt="Logo" />
+            <img src={logo} alt="Logo" className="rounded-full bg-white p-0.5 h-14 w-14 -m-2 aspect-square"/>
           </NavLink>
           {/* Hamburger menu for mobile */}
           <div
