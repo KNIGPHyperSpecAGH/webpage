@@ -1,13 +1,15 @@
+import {NavLink} from "react-router";
+
 type Sponsor = {
     name: string;
     logoUrl?: string;
 };
 
 const sponsors: Sponsor[] = [
-    { name: "Sponsor A", logoUrl: "/yobama.jpg" },
-    { name: "Sponsor B", logoUrl: "/yobama.jpg" },
-    { name: "Sponsor C", logoUrl: "/yobama.jpg" },
-    { name: "Sponsor D", logoUrl: "/yobama.jpg" },
+    {name: "Sponsor A", logoUrl: "/yobama.jpg"},
+    {name: "Sponsor B", logoUrl: "/yobama.jpg"},
+    {name: "Sponsor C", logoUrl: "/yobama.jpg"},
+    {name: "Sponsor D", logoUrl: "/yobama.jpg"},
 ];
 
 export const SponsorsPage = () => {
@@ -39,13 +41,12 @@ export const SponsorsPage = () => {
                         vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean
                         feugiat luctus gravida.
                     </p>
-                    <a
-                        href="/kontakt#/kontakt"
-                        className="bg-accent text-white font-bold font-text rounded-full
+                    <NavLink to="/kontakt"
+                             className="bg-accent text-white font-bold font-text rounded-full
                         px-8 py-4 text-xl shadow-lg hover:bg-accent/90 transition self-center"
                     >
-                        Zostań sponsorem
-                    </a>
+                        Zostań sponsorem!
+                    </NavLink>
                 </section>
             </div>
 
@@ -56,7 +57,7 @@ export const SponsorsPage = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-                    {sponsors.map(({ name, logoUrl }, i) => (
+                    {sponsors.map(({name, logoUrl}, i) => (
                         <div
                             key={i}
                             className="bg-primary rounded-3xl flex flex-col items-center p-6 shadow-md border-2 border-solid border-accent"
