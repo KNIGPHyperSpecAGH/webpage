@@ -35,7 +35,7 @@ export const Navigation = ({ showLogo = true }: NavigationProps) => {
           </NavLink>
           {/* Hamburger menu for mobile */}
           <div
-            className="z-12 flex flex-col justify-center items-center w-10 h-10 cursor-pointer group md:hidden"
+            className="z-12 flex flex-col justify-center items-center w-10 h-10 cursor-pointer group lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span
@@ -53,8 +53,7 @@ export const Navigation = ({ showLogo = true }: NavigationProps) => {
             ></span>
           </div>
           {/* Second navigation for larger screens */}
-          <div className="hidden md:flex gap-20 mx-auto w-fit">
-            <div className="flex gap-20">
+          <div className= "hidden lg:flex justify-around w-full max-w-5xl m-auto">
               {navigationLinks.map((link) => (
                 <NavLink key={link.path} to={link.path} className="contents">
                   {({ isActive }) => (
@@ -63,14 +62,12 @@ export const Navigation = ({ showLogo = true }: NavigationProps) => {
                 </NavLink>
               ))}
             </div>
-            <Socials />
-          </div>
         </div>
         {/* Mobile menu */}
         <div
           className={`fixed top-0 left-0 z-11 w-full h-screen bg-primary flex flex-col pt-24
                          text-center font-text text-3xl font-bold
-                         transition-all duration-300 ease-out origin-top
+                         transition-all duration-300 ease-out origin-top lg:hidden
 
                         ${
                           menuOpen
