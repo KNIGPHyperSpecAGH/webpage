@@ -1,4 +1,6 @@
 import React from "react";
+import { Photo } from "./Photo";
+import { Button } from "./Button";
 
 export interface CardProps {
   title: string;
@@ -20,30 +22,20 @@ export const Card: React.FC<CardProps> = ({
     <article
       className={[
         "w-full",
-        // kartę sami ograniczamy szerokością wewnątrz grid/kolumny
         "bg-[#648673] text-white rounded-3xl border-2 border-[#4e6f61] shadow-[0_8px_28px_rgba(0,0,0,.22)] overflow-hidden",
-        // layout zawartości (obraz + treść)
         "flex flex-col md:flex-row",
         alignLeft ? "md:flex-row" : "md:flex-row-reverse",
       ].join(" ")}
     >
       {/* Kolumna ze zdjęciem + przycisk */}
       <div className="w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col">
-        <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl">
-          <img
-            src={imageUrl}
-            alt={title}
-            className="absolute inset-0 h-full w-full object-cover select-none"
-            draggable={false}
-          />
-        </div>
+        <Photo src={imageUrl} alt={title} />
 
-        <button
-          className="mt-6 md:mt-8 self-center w-[160px] h-[60px] rounded-full bg-[#C57B57] text-white text-lg
-                     transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white/30"
+        <Button
+          className="mt-6 md:mt-8 self-center w-[160px] h-[60px] bg-[#C57B57] text-white"
         >
           Więcej
-        </button>
+        </Button>
       </div>
 
       {/* Kolumna z treścią */}
