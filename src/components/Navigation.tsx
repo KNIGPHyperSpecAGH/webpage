@@ -78,7 +78,7 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
 
                 <div
                     className={`
-                        fixed top-0 left-0 z-11 w-full h-screen bg-primary flex flex-col pt-24
+                        fixed top-0 left-0 z-11 w-full h-screen bg-primary flex flex-col pt-18
                         text-center font-text text-3xl font-bold
                         transition-all duration-300 ease-out origin-top lg:hidden
                         ${menuOpen ? "opacity-100 scale-y-100" : "opacity-0 pointer-events-none scale-y-0"}
@@ -86,8 +86,9 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                 >
                     <div
                         className={`
-                        overflow-y-scroll overflow-x-hidden flex flex-col pb-5
-                    `}
+                            overflow-y-scroll overflow-x-hidden flex flex-col pb-12
+                            navigation__shadow-scroll
+                        `}
                     >
                         {navigationLinks.map((link, index) => (
                             <NavLink
@@ -109,7 +110,6 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                             </NavLink>
                         ))}
                         <hr className="m-5 mt-5"/>
-
                         <Socials/>
                     </div>
                 </div>
