@@ -4,10 +4,10 @@ import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 
 const messages = [
-    "Ups! Ta strona jest poza zasięgiem naszej satelity.",
-    "Ups! Nasza satelita nie mogła znaleźć tej strony.",
-    "Ups! Wygląda na to, że ta strona została pochłonięta przez czarną dziure.",
-    "Ups! Wygląda na to, że nasza satelita ma oko na coś innego."
+    "Ups! Ta strona jest poza zasięgiem naszego satelity.",
+    "Ups! Nasz satelita nie mógł znaleźć tej strony.",
+    "Ups! Wygląda na to, że ta strona została pochłonięta przez czarną dziurę.",
+    "Ups! Wygląda na to, że nasz satelita ma oko na coś innego."
 ];
 
 export const ErrorPage = () => {
