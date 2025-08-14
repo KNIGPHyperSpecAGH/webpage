@@ -14,7 +14,6 @@ export const RootLayout = ({children}: RootProps) => {
     return (
         <>
             <Navigation showLogo={!isRootPath}/>
-            <hr/>
             {children ? {children} : null}
             {<Outlet/>}
             <Footer/>
