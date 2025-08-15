@@ -1,4 +1,4 @@
-import { NavButton } from "../components/NavButton";
+import {NavButton} from "../components/NavButton";
 
 type Sponsor = {
     name: string;
@@ -39,7 +39,7 @@ export const SponsorsPage = () => {
                         vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean
                         feugiat luctus gravida.
                     </p>
-                    <NavButton href = "/kontakt">Zostań naszym sponsorem!</NavButton>
+                    <NavButton href="/kontakt">Zostań naszym sponsorem!</NavButton>
                 </section>
             </div>
 
