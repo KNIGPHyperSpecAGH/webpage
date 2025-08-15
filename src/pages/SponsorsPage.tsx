@@ -31,11 +31,9 @@ export const SponsorsPage = () => {
                         feugiat luctus gravida.
                     </p>
                 </section>
-
                 {/* Right */}
                 <section className="flex-1 bg-secondary rounded-[3vw] p-8 flex flex-col">
                     <h2 className="text-4xl font-header font-bold mb-1">Zostań sponsorem</h2>
-                    <h3 className="text-2xl font-header font-bold mb-1">Co oferujemy?</h3>
                     <p className="font-text mb-8 flex-grow">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a
                         vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean
