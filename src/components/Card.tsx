@@ -11,6 +11,8 @@ export interface CardProps {
   alignLeft?: boolean;
 }
 
+
+
 export const Card: React.FC<CardProps> = ({
   title,
   date,
