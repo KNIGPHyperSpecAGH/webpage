@@ -1,5 +1,4 @@
 import { NavButton } from "../components/NavButton";
-import {NavLink} from "react-router";
 
 type Sponsor = {
     name: string;
