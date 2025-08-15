@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NavLink} from "react-router";
-import {Button} from "./Button"; // Import your Button
+import {MenuButton} from "./MenuButton.tsx"; // Import your Button
 import {Socials} from "./Socials.tsx";
 import logo from "../assets/logo.png";
 
@@ -67,9 +67,9 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
                                 className="contents"
                             >
                                 {({isActive}) => (
-                                    <Button active={isActive}>
+                                    <MenuButton active={isActive}>
                                         {link.label}
-                                    </Button>
+                                    </MenuButton>
                                 )}
                             </NavLink>
                         ))}

@@ -1,3 +1,4 @@
+import { NavButton } from "../components/NavButton";
 import {NavLink} from "react-router";
 
 type Sponsor = {
@@ -41,12 +42,7 @@ export const SponsorsPage = () => {
                         vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean
                         feugiat luctus gravida.
                     </p>
-                    <NavLink to="/kontakt"
-                             className="bg-accent text-white font-bold font-text rounded-full
-                        px-8 py-4 text-xl shadow-lg hover:bg-accent/90 transition self-center"
-                    >
-                        Zostań sponsorem!
-                    </NavLink>
+                    <NavButton href = "/kontakt">Zostań naszym sponsorem!</NavButton>
                 </section>
             </div>
 

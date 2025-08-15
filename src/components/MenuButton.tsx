@@ -5,7 +5,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     active?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = ({children, active, ...props}) => (
+const MenuButton: React.FC<ButtonProps> = ({children, active, ...props}) => (
     <button
         {...props}
         className={
@@ -17,4 +17,4 @@ const Button: React.FC<ButtonProps> = ({children, active, ...props}) => (
     </button>
 );
 
-export {Button};
+export {MenuButton};
