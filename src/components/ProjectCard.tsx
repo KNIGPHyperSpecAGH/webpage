@@ -25,10 +25,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
-                        rounded-lg
+                        rounded-lg bg-element
                         flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
                         `}
-            style={{ backgroundColor: "color-mix(in srgb, var(--color-element) 60%, transparent)" }}
         >
             {/* content */}
             <div className="p-4 md:p-6 flex-1 flex flex-col justify-between">
