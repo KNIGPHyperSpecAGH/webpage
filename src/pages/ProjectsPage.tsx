@@ -4,34 +4,29 @@ import { ProjectCard } from "../components/ProjectCard";
 export const ProjectsPage = () => {
     return (
         <div className="flex flex-col space-y-20 pb-20">
-            <div className="min-h-[80vh] w-full flex flex-col items-center justify-center">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-text)" }}>
+            <div className="min-h-[30vh] w-full flex flex-col items-center justify-center">
+                <h1 className=" text-7xl md:text-8xl font-bold text-white mb-6">
                     Projekty
                 </h1>
-                <p className="text-sm md:text-lg text-white w-full md:w-3/5 text-center px-4" style={{ fontFamily: "var(--font-text)" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula nisl...
-                </p>
             </div>
 
             <ProjectCard
-                title="Lorem ipsum dolor sit amet"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula nisl..."
+                title="Wspolpraca z Acerol Mittal"
+                description="W 2025 udało nam się podpisać umowę..."
                 image="/yobama.jpg"
                 variant="left"
                 ctaLabel="Czytaj więcej"
-                ctaHref="#"
+                ctaHref="/projekty/piec"
             />
 
             <ProjectCard
-                title="Inny projekt"
-                description="Kolejny opis projektu, responsywny i nie hardkodowany."
+                title="Modelowanie ruchu wydm"
+                description="Dzięki zastosowaniu nowoczesnych technologii udało nam się stworzyć model..."
                 image="/yobama.jpg"
                 variant="right"
-                ctaLabel="Szczegóły"
-                ctaHref="#"
+                ctaLabel="Czytaj więcej"
+                ctaHref="/projekty/wydmy"
             />
-
-            {/* ...additional ProjectCard instances... */}
         </div>
     );
 };

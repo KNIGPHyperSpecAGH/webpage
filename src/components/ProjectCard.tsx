@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavButton } from "./NavButton";
 
 type ProjectCardProps = {
     title: string;
@@ -42,31 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
                 {ctaLabel ? (
                     <div className="mt-4">
-                        {ctaHref ? (
-                            <a
-                                href={ctaHref}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block mt-2 px-4 py-2 rounded-full text-sm font-medium"
-                                style={{
-                                    backgroundColor: "var(--color-accent)",
-                                    color: "var(--color-white)",
-                                }}
-                            >
-                                {ctaLabel}
-                            </a>
-                        ) : (
-                            <button
-                                className="inline-block mt-2 px-4 py-2 rounded-full text-sm font-medium"
-                                style={{
-                                    backgroundColor: "var(--color-accent)",
-                                    color: "var(--color-white)",
-                                }}
-                                type="button"
-                            >
-                                {ctaLabel}
-                            </button>
-                        )}
+                        {ctaHref ? <NavButton href={ctaHref}>{ctaLabel}</NavButton>:<NavButton>{ctaLabel}</NavButton>}
                     </div>
                 ) : null}
             </div>
