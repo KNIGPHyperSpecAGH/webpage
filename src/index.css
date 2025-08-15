@@ -4,15 +4,16 @@
 
 @theme {
     /* Custom colors */
-    --color-primary: #03382d;
-    --color-secondary: #095142; /* i changed it to color defined in figma */
+    --color-primary: #496656;
+    --color-secondary: #739884; /* i changed it to color defined in figma */
     --color-element: #027961;
     --color-white: #f2f0ef;
-    --color-black: #333333;
+    --color-black: #494949;
     --color-accent: #c57b57;
     --color-red: #cc2128;
+    --color-footer: #E87D48; 
     /* Custom font families */
-    --font-header: 'Domine', serif;
+    --font-header: 'Lato', sans-serif;
     --font-text: 'Lato', sans-serif;
 }
 
