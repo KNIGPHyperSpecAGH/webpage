@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     <h3 className="text-xl md:text-2xl font-semibold mb-3">
                         {title}
                     </h3>
-                    <p className="text-sm md:text-base leading-relaxed">
+                    <p className="text-lg md:text-xl leading-relaxed">
                         {description}
                     </p>
                 </div>
