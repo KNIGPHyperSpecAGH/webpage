@@ -9,8 +9,8 @@ const Button: React.FC<ButtonProps> = ({children, active, ...props}) => (
     <button
         {...props}
         className={
-            `rounded-full text-lg px-6 py-2 font-semibold cursor-pointer transition-colors duration-200 hover:text-accent hover:border-accent border-4 whitespace-nowrap
-            ${active ? "border-accent" : "text-white border-transparent"}`
+            `rounded-full text-lg px-6 py-2 font-semibold cursor-pointer transition-colors duration-200 hover:text-accent  border-4 whitespace-nowrap
+            ${active ? "border-white" : "text-white border-transparent"}`
         }
     >
         {children}
