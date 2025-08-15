@@ -24,19 +24,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
     return (
         <article
-            className={`w-full max-w-4xl mx-auto shadow-md overflow-hidden
+            className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
                         rounded-lg
                         flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
                         `}
             style={{ backgroundColor: "color-mix(in srgb, var(--color-element) 60%, transparent)" }}
         >
             {/* content */}
-            <div className="p-4 md:p-6 flex-1 flex flex-col justify-between" style={{ color: "var(--color-white)" }}>
+            <div className="p-4 md:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-3" style={{ fontFamily: "var(--font-text)" }}>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-3">
                         {title}
                     </h3>
-                    <p className="text-sm md:text-base leading-relaxed" style={{ fontFamily: "var(--font-text)" }}>
+                    <p className="text-sm md:text-base leading-relaxed">
                         {description}
                     </p>
                 </div>
