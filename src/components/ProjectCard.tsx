@@ -1,0 +1,88 @@
+import * as React from "react";
+
+type ProjectCardProps = {
+    title: string;
+    description: string;
+    image?: string;
+    imageAlt?: string;
+    variant?: "left" | "right";
+    ctaLabel?: string;
+    ctaHref?: string;
+};
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+    title,
+    description,
+    image,
+    imageAlt = "",
+    variant = "left",
+    ctaLabel,
+    ctaHref,
+}) => {
+    const isRight = variant === "right";
+
+    return (
+        <article
+            className={`w-full max-w-4xl mx-auto shadow-md overflow-hidden
+                        rounded-lg
+                        flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
+                        `}
+            style={{ backgroundColor: "color-mix(in srgb, var(--color-element) 60%, transparent)" }}
+        >
+            {/* content */}
+            <div className="p-4 md:p-6 flex-1 flex flex-col justify-between" style={{ color: "var(--color-white)" }}>
+                <div>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-3" style={{ fontFamily: "var(--font-text)" }}>
+                        {title}
+                    </h3>
+                    <p className="text-sm md:text-base leading-relaxed" style={{ fontFamily: "var(--font-text)" }}>
+                        {description}
+                    </p>
+                </div>
+
+                {ctaLabel ? (
+                    <div className="mt-4">
+                        {ctaHref ? (
+                            <a
+                                href={ctaHref}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block mt-2 px-4 py-2 rounded-full text-sm font-medium"
+                                style={{
+                                    backgroundColor: "var(--color-accent)",
+                                    color: "var(--color-white)",
+                                }}
+                            >
+                                {ctaLabel}
+                            </a>
+                        ) : (
+                            <button
+                                className="inline-block mt-2 px-4 py-2 rounded-full text-sm font-medium"
+                                style={{
+                                    backgroundColor: "var(--color-accent)",
+                                    color: "var(--color-white)",
+                                }}
+                                type="button"
+                            >
+                                {ctaLabel}
+                            </button>
+                        )}
+                    </div>
+                ) : null}
+            </div>
+
+            {/* image */}
+            {image ? (
+                <div className="w-full md:w-1/3 flex-shrink-0">
+                    <img
+                        src={image}
+                        alt={imageAlt}
+                        className="w-full h-44 md:h-full object-cover"
+                    />
+                </div>
+            ) : null}
+        </article>
+    );
+};
+
+export { ProjectCard };
