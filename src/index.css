@@ -6,11 +6,11 @@
     /* Custom colors */
     --color-primary: #496656;
     --color-secondary: #739884; /* i changed it to color defined in figma */
-    --color-element: #027961;
+    --color-element: #648673;
     --color-white: #f2f0ef;
     --color-black: #494949;
     --color-accent: #c57b57;
-    --color-footer: #E87D48; 
+    --color-footer: #E87D48;
     /* Custom font families */
     --font-header: 'Lato', sans-serif;
     --font-text: 'Lato', sans-serif;
