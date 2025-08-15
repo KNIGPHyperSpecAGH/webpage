@@ -10,28 +10,10 @@
     --color-white: #f2f0ef;
     --color-black: #494949;
     --color-accent: #c57b57;
-    --color-red: #cc2128;
     --color-footer: #E87D48; 
     /* Custom font families */
     --font-header: 'Lato', sans-serif;
     --font-text: 'Lato', sans-serif;
-}
-
-/*TODO remove this style*/
-/*font for projectspage*/
-.font-content {
-    font-family: var(--font-text);
-    font-size: clamp(0rem, 1.5vw, 1.5rem);
-    color: var(--color-white);
-    text-align: justify;
-}
-
-/*font for projectspage*/
-.font-projheader {
-    font-family: var(--font-text);
-    font-size: clamp(0rem, 2.5vw, 2.5rem);
-    color: var(--color-white);
-    font-weight: 800;
 }
 
 body {
