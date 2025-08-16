@@ -28,7 +28,7 @@ const ManagementCard = ({
 
 export const AboutPage = () => {
  return (
-    <div className="bg-primary min-h-screen flex flex-col items-center px-4 py-8">
+    <div className="bg-secondary min-h-screen flex flex-col items-center px-4 py-8">
       {/* Section: About */}
       <h2 className="text-white text-2xl font-bold mb-4">O nas</h2>
       <p className="text-white text-center max-w-md mb-8">
@@ -36,18 +36,19 @@ export const AboutPage = () => {
       </p>
 
       {/* Section: Board */}
-      <div className="bg-primary w-full py-4 border-t border-[#6f9784]">
+      <div className=" w-full py-4">
+        <hr className="border-t border-white mb-8" />
         {/* Container that becomes two columns on md+: left = members, right = map */}
         <div className="w-full max-w-6xl mx-auto flex flex-col ">
           
           {/* Top row: title on left, location heading on right (md+) */}
-          <div className="w-full px-4 mb-6 flex flex-col md:flex-row items-center md:items-center md:justify-around">
-            <div className="px-4 py-1 border-white rounded-full text-white font-semibold text-center">
+          <div className="w-full px-4 text-white font-semibold text-lg mb-6 flex flex-col md:flex-row items-center md:items-center md:justify-around">
+            <div className="px-4 py-1 border-white rounded-full  text-center">
               Nasz zarząd
             </div>
 
             {/* show on md+ beside the title */}
-            <h3 className="hidden md:block text-white text-lg font-bold mb-0 text-center">
+            <h3 className="hidden md:block mb-0 text-center">
               Nasza lokalizacja
             </h3>
           </div>
