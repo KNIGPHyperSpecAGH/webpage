@@ -1,6 +1,6 @@
 import React from "react";
 import { Photo } from "./Photo";
-import { Button } from "./Button";
+import { NavButton } from "./NavButton";
 
 export interface CardProps {
   title: string;
@@ -33,11 +33,9 @@ export const Card: React.FC<CardProps> = ({
       <div className="w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col">
         <Photo src={imageUrl} alt={title} />
 
-        <Button
-          className="mt-6 md:mt-8 self-center w-[160px] h-[60px] bg-[#C57B57] text-white"
-        >
+        <NavButton>
           Więcej
-        </Button>
+        </NavButton>
       </div>
 
       {/* Kolumna z treścią */}
