@@ -2,6 +2,7 @@ import {Outlet, useMatches} from "react-router";
 import * as React from "react";
 import {Navigation} from "./Navigation.tsx";
 import {Footer} from "./Footer.tsx";
+import ScrollToTop from "../ScrollToTop";
 
 interface RootProps {
     children?: React.ReactNode;
@@ -13,6 +14,7 @@ export const RootLayout = ({children}: RootProps) => {
 
     return (
         <>
+            <ScrollToTop/>
             <Navigation showLogo={!isRootPath}/>
             {children ? {children} : null}
             {<Outlet/>}
