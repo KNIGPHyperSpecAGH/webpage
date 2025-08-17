@@ -1,5 +1,5 @@
 import {NavButton} from "../components/NavButton";
-
+import { SimpleCard } from "../components/SimpleCard";
 type Sponsor = {
     name: string;
     logoUrl?: string;
@@ -21,26 +21,12 @@ export const SponsorsPage = () => {
             {/* Top section, 2 blocks */}
             <div className="w-full max-w-7xl flex flex-col md:flex-row gap-12 mb-12">
                 {/* Left */}
-                <section className="flex-1 bg-primary rounded-[3vw] p-8 flex flex-col">
-                    <h1 className="text-4xl font-header font-bold mb-1">
-                        Na co zbieramy pieniądze ?
-                    </h1>
-                    <p className="text-lg leading-relaxed font-text flex-grow">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a
-                        vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean
-                        feugiat luctus gravida.
-                    </p>
-                </section>
+                <SimpleCard header="Na co zbieramy pieniądze ?" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean feugiat luctus gravida." />
                 {/* Right */}
-                <section className="flex-1 bg-primary rounded-[3vw] p-8 flex flex-col">
-                    <h2 className="text-4xl font-header font-bold mb-1">Zostań sponsorem</h2>
-                    <p className="font-text mb-8 flex-grow">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a
-                        vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean
-                        feugiat luctus gravida.
-                    </p>
+                <SimpleCard header="Zostań sponsorem" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula nisl. Nunc feugiat leo eget lacus auctor placerat. Aenean feugiat luctus gravida."> 
                     <NavButton href="/kontakt">Zostań naszym sponsorem!</NavButton>
-                </section>
+                </SimpleCard>
+
             </div>
 
             {/* Snponsors section */}
