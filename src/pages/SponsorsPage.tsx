@@ -15,13 +15,13 @@ const sponsors: Sponsor[] = [
 export const SponsorsPage = () => {
     return (
         <div
-            className="min-h-screen bg-[url(/background.jpg)] bg-primary bg-fixed
+            className="min-h-screen bg-fixed
                   flex flex-col items-center pt-20 px-4 pb-20 text-white"
         >
             {/* Top section, 2 blocks */}
             <div className="w-full max-w-7xl flex flex-col md:flex-row gap-12 mb-12">
                 {/* Left */}
-                <section className="flex-1 bg-secondary rounded-[3vw] p-8 flex flex-col">
+                <section className="flex-1 bg-primary rounded-[3vw] p-8 flex flex-col">
                     <h1 className="text-4xl font-header font-bold mb-1">
                         Na co zbieramy pieniądze ?
                     </h1>
@@ -32,7 +32,7 @@ export const SponsorsPage = () => {
                     </p>
                 </section>
                 {/* Right */}
-                <section className="flex-1 bg-secondary rounded-[3vw] p-8 flex flex-col">
+                <section className="flex-1 bg-primary rounded-[3vw] p-8 flex flex-col">
                     <h2 className="text-4xl font-header font-bold mb-1">Zostań sponsorem</h2>
                     <p className="font-text mb-8 flex-grow">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a
@@ -44,7 +44,7 @@ export const SponsorsPage = () => {
             </div>
 
             {/* Snponsors section */}
-            <section className="w-full max-w-7xl bg-secondary rounded-[3vw] p-8 shadow-lg">
+            <section className="w-full max-w-7xl bg-primary rounded-[3vw] p-8 shadow-lg">
                 <h2 className="text-4xl font-header font-bold mb-10 text-center">
                     Nasi sponsorzy
                 </h2>
