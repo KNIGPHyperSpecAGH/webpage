@@ -24,7 +24,7 @@ export const Card: React.FC<CardProps> = ({
     <article
       className={[
         "w-full",
-        "bg-[#648673] text-white rounded-3xl border-2 border-[#4e6f61] shadow-[0_8px_28px_rgba(0,0,0,.22)] overflow-hidden",
+        "bg-primary text-white rounded-3xl border-2 border-primary shadow-[0_8px_28px_rgba(0,0,0,.22)] overflow-hidden",
         "flex flex-col md:flex-row",
         alignLeft ? "md:flex-row" : "md:flex-row-reverse",
       ].join(" ")}
