@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
-                        rounded-lg bg-primary
+                        rounded-lg bg-element
                         flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
                         `}
         >

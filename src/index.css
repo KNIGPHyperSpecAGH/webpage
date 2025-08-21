@@ -4,9 +4,9 @@
 
 @theme {
     /* Custom colors */
-    --color-primary: #485846;
-    --color-secondary: #768F75; /* i changed it to color defined in figma */
-    --color-element: #648673;
+    --color-element: #586C56;
+    --color-navbar: #485846;
+    --color-background: #768F75;
     --color-white: #f2f0ef;
     --color-black: #494949;
     --color-accent: #c57b57;
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: var(--color-secondary);
+    background-color: var(--color-background);
     font-family: var(--font-text), sans-serif;
     color: var(--color-white);
 }

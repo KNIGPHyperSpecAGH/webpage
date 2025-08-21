@@ -13,7 +13,7 @@ const sponsors: Sponsor[] = [
 ];
 const SponsorSection = () => {
     return (
-        <section className="w-full max-w-7xl bg-primary rounded-[3vw] p-8 shadow-lg">
+        <section className="w-full max-w-7xl bg-element rounded-[3vw] p-8 shadow-lg">
             <h2 className="text-4xl font-header font-bold mb-10 text-center">
                 Nasi sponsorzy
             </h2>
@@ -22,7 +22,7 @@ const SponsorSection = () => {
                 {sponsors.map(({name, logoUrl}, i) => (
                     <div
                         key={i}
-                        className="bg-primary rounded-3xl flex flex-col items-center p-6 shadow-md border-2 border-solid border-accent"
+                        className="bg-navbar rounded-3xl flex flex-col items-center p-6 shadow-md border-2 border-solid border-accent"
                     >
                         <div
                             className="w-32 h-32 bg-white rounded-2xl mb-6 flex items-center justify-center select-none border-2 border-solid border-accent"
