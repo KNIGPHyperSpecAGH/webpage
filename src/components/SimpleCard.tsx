@@ -8,7 +8,7 @@ type SimpleCardProps = {
 const SimpleCard = ({ header, text, children }: SimpleCardProps) => {
     return (
         <section className="flex-1 bg-element rounded-[3vw] p-12 flex flex-col">
-            <h1 className="text-4xl font-header font-bold mb-1">
+            <h1 className="text-4xl font-header font-bold mb-5">
                 {header}
             </h1>
                     <p className="text-lg leading-relaxed font-text flex-grow">
