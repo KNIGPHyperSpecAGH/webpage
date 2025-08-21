@@ -22,7 +22,7 @@ export const Navigation = ({showLogo = true}: NavigationProps) => {
 
     return (
         <>
-            <nav className="sticky top-0 z-10 bg-primary text-white">
+            <nav className="sticky top-0 z-10 bg-navbar text-white">
                 <div className="flex justify-between items-center p-4">
                     <NavLink
                         to="/"
