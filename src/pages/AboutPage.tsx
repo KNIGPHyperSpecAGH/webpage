@@ -42,11 +42,10 @@ export const AboutPage = () => {
 
       {/* Section: Board */}
       <div className="w-full py-4">
-        <hr className="border-t border-white mb-8" />
 
-        <div className="w-full max-w-6xl mx-auto flex flex-col">
+        <div className="w-full max-w-7xl mx-auto flex flex-col pt-5">
           {/* Title */}
-          <div className="px-4 text-white font-semibold text-lg mb-6 text-center">
+          <div className="px-4 text-white font-semibold text-4xl mb-5 text-center">
             Nasz zarząd
           </div>
 
