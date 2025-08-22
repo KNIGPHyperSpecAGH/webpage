@@ -1,87 +1,87 @@
-import { MapLocation } from "../components/MapLocation";
+import groupPhoto from "../assets/group_photo.jpg";
 const ManagementCard = ({
   name,
   role,
-  imageOnLeft = true,
 }: {
   name: string;
   role: string;
-  imageOnLeft?: boolean;
 }) => {
-
-  const textAlignClass = imageOnLeft ?  "text-left" : "text-right";
   return (
-    <div className="flex items-center justify-between w-full md:max-w-xs mx-auto md:mx-0 my-4">
-      {imageOnLeft && (
-        <div className="w-16 h-16 bg-gray-700 rounded-lg shrink-0"></div>
-      )}
-      <div className={`${textAlignClass} flex-1 px-4`}>
-        <p className="text-white font-bold">{name}</p>
-        <p className="text-white text-sm">{role}</p>
+    <div className="flex flex-col items-center justify-center w-full bg-element rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
+      {/* Image */}
+      <div className="w-20 h-20 bg-gray-700 rounded-full mb-4"></div>
+
+      {/* Text */}
+      <div>
+        <p className="text-white font-bold text-lg">{name}</p>
+        <p className="text-gray-300 text-sm">{role}</p>
       </div>
-      {!imageOnLeft && (
-        <div className="w-16 h-16 bg-gray-700 rounded-lg shrink-0"></div>
-      )}
     </div>
   );
 };
 
+
+
 export const AboutPage = () => {
- return (
-    <div className="bg-secondary min-h-screen flex flex-col items-center px-4 py-8">
+  return (
+    <div className="min-h-screen flex flex-col items-center px-4 py-8 pt-20">
       {/* Section: About */}
-      <h2 className="text-white text-2xl font-bold mb-4">O nas</h2>
-      <p className="text-white text-center max-w-md mb-8">
-        ...
-      </p>
+      <div className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-[3vw]">
+        <p className="text-white text-2xl leading-relaxed lg:w-1/2 text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Nobis quia corporis
+          recusandae. Impedit error tempore quod nemo quia tempora iste amet
+          enim, non, nesciunt, ullam ipsum quo vero saepe. Nisi.
+        </p>
+        <img
+          src={groupPhoto}
+          alt="About us"
+          className="rounded-2xl shadow-lg lg:w-1/2 w-full h-auto object-cover"
+        />
+      </div>
 
       {/* Section: Board */}
-      <div className=" w-full py-4">
-        <hr className="border-t border-white mb-8" />
-        {/* Container that becomes two columns on md+: left = members, right = map */}
-        <div className="w-full max-w-6xl mx-auto flex flex-col ">
-          
-          {/* Top row: title on left, location heading on right (md+) */}
-          <div className="w-full px-4 text-white font-semibold text-lg mb-6 flex flex-col md:flex-row items-center md:items-center md:justify-around">
-            <div className="px-4 py-1 border-white rounded-full  text-center">
-              Nasz zarząd
-            </div>
+      <div className="w-full py-4">
 
-            {/* show on md+ beside the title */}
-            <h3 className="hidden md:block mb-0 text-center">
-              Nasza lokalizacja
-            </h3>
+        <div className="w-full max-w-7xl mx-auto flex flex-col pt-5">
+          {/* Title */}
+          <div className="px-4 text-white font-semibold text-4xl mb-5 text-center">
+            Nasz zarząd
           </div>
 
-          {/* Columns: members (left) and map (right) */}
-          <div className="w-full px-4 flex flex-col md:flex-row md:items-start">
-            {/* Left column: members */}
-            <div className="w-full md:w-1/2">
-              <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <ManagementCard name="imię nazwisko" role="Opiekun koła" imageOnLeft />
-                <ManagementCard name="imię nazwisko" role="Opiekun koła" imageOnLeft={false} />
-                <ManagementCard name="imię nazwisko" role="Przewodniczący koła" imageOnLeft />
-                <ManagementCard name="imię nazwisko" role="Wiceprzewodniczący koła" imageOnLeft={false} />
-                <ManagementCard name="imię nazwisko" role="Wiceprzewodnicząca koła" imageOnLeft />
-                <ManagementCard name="imię nazwisko" role="Przewodniczący sekcji" imageOnLeft={false} />
-                <ManagementCard name="imię nazwisko" role="Przewodniczący sekcji" imageOnLeft />
-              </div>
-            </div>
-
-            {/* Right column: map */}
-            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-6 self-center md:content-stretch lg:content-normal">
-              {/* mobile-only heading above the map */}
-              <h3 className="block md:hidden text-white text-lg font-bold mb-4 text-center">
-                Nasza lokalizacja
-              </h3>
-              <div className="self-stretch">
-                <MapLocation />
-              </div>
-              
-            </div>
+          {/* Grid of cards */}
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Opiekun koła"
+            />
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Opiekun koła"
+            />
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Przewodniczący koła"
+            />
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Wiceprzewodniczący koła"
+            />
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Wiceprzewodnicząca koła"
+            />
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Przewodniczący sekcji"
+            />
+            <ManagementCard
+              name="Imię Nazwisko"
+              role="Przewodniczący sekcji"
+            />
           </div>
         </div>
       </div>
-       </div>
+    </div>
   );
-}
+};
