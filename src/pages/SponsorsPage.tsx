@@ -1,5 +1,5 @@
-import { NavButton } from "../components/NavButton";
-import { SimpleCard } from "../components/SimpleCard";
+import {NavButton} from "../components/NavButton";
+import {SimpleCard} from "../components/SimpleCard";
 
 type Sponsor = {
     name: string;
@@ -8,12 +8,12 @@ type Sponsor = {
 };
 
 const sponsors: Sponsor[] = [
-    { name: "Sponsor A", logoUrl: "/yobama.jpg", url: "https://poczta.agh.edu.pl/rcm-1.5/" },
-    { name: "Sponsor B", logoUrl: "/yobama.jpg" },
-    { name: "Sponsor C", logoUrl: "/yobama.jpg" },
-    { name: "Sponsor D"},
-    { name: "Sponsor D"},
-    { name: "Sponsor D"},
+    {name: "Sponsor A", logoUrl: "/yobama.jpg", url: "https://poczta.agh.edu.pl/rcm-1.5/"},
+    {name: "Sponsor B", logoUrl: "/yobama.jpg"},
+    {name: "Sponsor C", logoUrl: "/yobama.jpg"},
+    {name: "Sponsor D"},
+    {name: "Sponsor D"},
+    {name: "Sponsor D"},
 ];
 
 const cardBase = "relative flex flex-col bg-element rounded-[3vw] shadow-md overflow-hidden";
@@ -26,7 +26,7 @@ const scrollToTop = () => {
     });
 };
 
-const SponsorCard = ({ sponsor }: { sponsor: Sponsor }) => (
+const SponsorCard = ({sponsor}: { sponsor: Sponsor }) => (
     <div className={cardBase}>
         {sponsor.url ? (
             <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
@@ -64,7 +64,7 @@ const SponsorSection = () => (
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
             {sponsors.map((sponsor, i) => (
-                <SponsorCard key={i} sponsor={sponsor} />
+                <SponsorCard key={i} sponsor={sponsor}/>
             ))}
         </div>
     </section>
@@ -72,7 +72,8 @@ const SponsorSection = () => (
 
 export const SponsorsPage = () => (
     <div className="min-h-screen bg-background flex flex-col items-center py-10 pt-20 text-white px-4">
-        <div className="w-full max-w-7xl flex flex-col md:flex-row gap-5 mb-3">
+        <div
+            className="w-full max-w-7xl flex flex-col items-center text-center gap-5 mb-3 md:flex-row md:items-stretch md:text-left">
             <SimpleCard
                 header="Na co zbieramy pieniądze ?"
                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
@@ -90,6 +91,6 @@ export const SponsorsPage = () => (
         >
             ↑
         </button>
-        <SponsorSection />
+        <SponsorSection/>
     </div>
 );
