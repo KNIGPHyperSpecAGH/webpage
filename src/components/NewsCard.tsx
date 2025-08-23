@@ -65,7 +65,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                         <h3 className="text-white font-header text-2xl mb-3">
                             {title}
                         </h3>
-                        <p className="text-gray-300 font-text text-lg leading-relaxed">
+                        <p className="font-text text-lg leading-relaxed">
                             {description}
                         </p>
                     </div>
