@@ -16,8 +16,8 @@ const sponsors: Sponsor[] = [
     { name: "Sponsor D"},
 ];
 
-const cardBase = "relative flex flex-col bg-element rounded-[3rem] shadow-md overflow-hidden";
-const cardImageBase = "relative w-full aspect-[3/4] overflow-hidden rounded-[3rem]";
+const cardBase = "relative flex flex-col bg-element rounded-[3vw] shadow-md overflow-hidden";
+const cardImageBase = "relative w-full aspect-[3/4] overflow-hidden rounded-[3vw]";
 
 const scrollToTop = () => {
     window.scrollTo({
@@ -58,7 +58,7 @@ const SponsorCard = ({ sponsor }: { sponsor: Sponsor }) => (
 );
 
 const SponsorSection = () => (
-    <section className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="w-full max-w-7xl">
         <h2 className="text-3xl font-header font-bold mb-3 text-center text-white">
             Nasi sponsorzy
         </h2>
@@ -71,8 +71,8 @@ const SponsorSection = () => (
 );
 
 export const SponsorsPage = () => (
-    <div className="min-h-screen bg-background flex flex-col items-center py-10 pt-20 text-white">
-        <div className="w-full max-w-7xl flex flex-col md:flex-row gap-5 mb-3 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background flex flex-col items-center py-10 pt-20 text-white px-4">
+        <div className="w-full max-w-7xl flex flex-col md:flex-row gap-5 mb-3">
             <SimpleCard
                 header="Na co zbieramy pieniądze ?"
                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
