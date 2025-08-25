@@ -54,7 +54,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                     <div
                         className={`absolute flex flex-col items-center justify-center
                           w-24 h-24 bg-accent text-white rounded-[1.5vw] shadow-md
-                          ${isRight ? "bottom-2 right-2" : "bottom-2 left-2"}`}
+                          ${isRight ? "bottom-4 right-4" : "bottom-4 left-4"}`}
                     >
                         <span className="text-2xl font-bold">{day}</span>
                         <span className="text-sm uppercase">{month}</span>
@@ -65,16 +65,16 @@ const NewsCard: React.FC<NewsCardProps> = ({
 
             <div className="flex-1 flex flex-col justify-between p-4 md:p-6 text-center md:text-left">
                 <div>
-                    <h3 className="text-white font-header font-bold text-2xl md:text-2xl mb-2">
+                    <h3 className="text-4xl font-text font-bold mb-5 text-white">
                         {title}
                     </h3>
-                    <p className="text-white font-text text-base md:text-lg leading-relaxed mt-0">
+                    <p className="text-xl leading-relaxed font-text text-white">
                         {description}
                     </p>
                 </div>
 
                 {ctaLabel && (
-                    <div className="flex w-full md:w-auto justify-center md:justify-start mt-4">
+                    <div className="mt-4 flex w-full md:w-auto justify-center md:justify-start">
                         {ctaHref ? (
                             <NavButton href={ctaHref}>{ctaLabel}</NavButton>
                         ) : (
