@@ -1,4 +1,4 @@
-import { ProjectCard } from "../components/ProjectCard";
+import {ProjectCard} from "../components/ProjectCard";
 
 export const ProjectsPage = () => {
     return (
@@ -11,6 +11,8 @@ export const ProjectsPage = () => {
                     variant="left"
                     ctaLabel="Czytaj więcej"
                     ctaHref="/projekty/piec"
+                    startDate="01 stycznia 2025"
+                    endDate="30 kwietnia 2025"
                 />
 
                 <ProjectCard
@@ -20,6 +22,7 @@ export const ProjectsPage = () => {
                     variant="right"
                     ctaLabel="Czytaj więcej"
                     ctaHref="/projekty/wydmy"
+                    startDate="15 stycznia 2025"
                 />
             </div>
         </div>
