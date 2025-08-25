@@ -6,9 +6,10 @@ type NewsCardProps = {
     description: string;
     image: string;
     imageAlt?: string;
-    date: Date;
+    date?: Date;
     ctaLabel?: string;
     ctaHref?: string;
+    variant?: "left" | "right";
 };
 
 const months = [
@@ -24,62 +25,63 @@ const NewsCard: React.FC<NewsCardProps> = ({
                                                date,
                                                ctaLabel,
                                                ctaHref,
+                                               variant = "left",
                                            }) => {
-    //months index from 0
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
+    const isRight = variant === "right";
+
+    let day, month, year;
+    if (date) {
+        day = date.getDate();
+        month = months[date.getMonth()];
+        year = date.getFullYear();
+    }
 
     return (
         <article
-            className="w-full max-w-7xl mx-auto flex flex-col md:flex-row
-                 bg-element rounded-[3vw] shadow-md hover:shadow-lg
-                 overflow-hidden transition-shadow"
+            className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
+        rounded-[3vw] bg-element
+        flex flex-col md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
+        hover:shadow-lg transition-shadow`}
         >
-            <div className="w-full md:w-1/3 flex-shrink-0">
+            <div className="w-full md:w-1/3 flex-shrink-0 relative order-1 md:order-1">
                 <img
                     src={image}
                     alt={imageAlt}
-                    className="w-full h-44 md:h-full object-cover block"
-                    draggable={false}
-                    loading="lazy"
+                    className="w-full h-44 md:h-full object-cover"
                 />
+
+                {date && (
+                    <div
+                        className={`absolute flex flex-col items-center justify-center
+                          w-24 h-24 bg-accent text-white rounded-[1.5vw] shadow-md
+                          ${isRight ? "bottom-2 right-2" : "bottom-2 left-2"}`}
+                    >
+                        <span className="text-2xl font-bold">{day}</span>
+                        <span className="text-sm uppercase">{month}</span>
+                        <span className="text-xs">{year}</span>
+                    </div>
+                )}
             </div>
 
-            <div
-                className="p-6 flex-1 flex flex-col md:flex-row
-                   items-center md:items-start text-center md:text-left"
-            >
-                <div
-                    className="flex flex-col items-center justify-center
-                     w-24 h-24 bg-accent text-white rounded-[1.5vw]
-                     shadow-md flex-shrink-0 mb-4 md:mb-0"
-                >
-                    <span className="text-2xl font-bold">{day}</span>
-                    <span className="text-sm uppercase">{month}</span>
-                    <span className="text-xs">{year}</span>
+            <div className="flex-1 flex flex-col justify-between p-4 md:p-6 text-center md:text-left">
+                <div>
+                    <h3 className="text-white font-header font-bold text-2xl md:text-2xl mb-2">
+                        {title}
+                    </h3>
+                    <p className="text-white font-text text-base md:text-lg leading-relaxed mt-0">
+                        {description}
+                    </p>
                 </div>
 
-                <div className="flex-1 md:ml-6 flex flex-col justify-between items-center md:items-start">
-                    <div>
-                        <h3 className="text-white font-header text-2xl mb-3">
-                            {title}
-                        </h3>
-                        <p className="font-text text-lg leading-relaxed">
-                            {description}
-                        </p>
+                {ctaLabel && (
+                    <div className="flex w-full md:w-auto justify-center md:justify-start mt-4">
+                        {ctaHref ? (
+                            <NavButton href={ctaHref}>{ctaLabel}</NavButton>
+                        ) : (
+                            <NavButton>{ctaLabel}</NavButton>
+                        )}
                     </div>
-
-                    {ctaLabel && (
-                        <div className="mt-4 flex w-full md:w-auto justify-center md:justify-start">
-                            {ctaHref ? (
-                                <NavButton href={ctaHref}>{ctaLabel}</NavButton>
-                            ) : (
-                                <NavButton>{ctaLabel}</NavButton>
-                            )}
-                        </div>
-                    )}
-                </div>
+                )}
             </div>
         </article>
     );

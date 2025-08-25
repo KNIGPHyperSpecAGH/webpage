@@ -11,6 +11,7 @@ export const NewsPage = () => {
                     date={new Date(2025, 1, 21)}
                     ctaLabel="Czytaj więcej"
                     ctaHref="/news/acerol"
+                    variant="left"
                 />
 
                 <NewsCard
@@ -20,6 +21,7 @@ export const NewsPage = () => {
                     date={new Date(2025, 12, 15)}
                     ctaLabel="Czytaj więcej"
                     ctaHref="/news/wydmy"
+                    variant="right"
                 />
             </div>
         </div>
