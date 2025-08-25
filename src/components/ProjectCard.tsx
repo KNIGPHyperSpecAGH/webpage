@@ -1,5 +1,5 @@
 import * as React from "react";
-import {NavButton} from "./NavButton";
+import { NavButton } from "./NavButton";
 
 type ProjectCardProps = {
     title: string;
@@ -9,6 +9,8 @@ type ProjectCardProps = {
     variant?: "left" | "right";
     ctaLabel?: string;
     ctaHref?: string;
+    startDate?: string;
+    endDate?: string;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -19,22 +21,47 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                                      variant = "left",
                                                      ctaLabel,
                                                      ctaHref,
+                                                     startDate,
+                                                     endDate,
                                                  }) => {
     const isRight = variant === "right";
 
     return (
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
-                  rounded-[3vw] bg-element
-                  flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}`}
+        rounded-[3vw] bg-element
+        flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}`}
         >
             <div
-                className="p-4 md:p-6 flex-1 flex flex-col justify-between items-center md:items-start text-center md:text-left">
+                className="p-4 md:p-6 flex-1 flex flex-col justify-between items-center md:items-start text-center md:text-left"
+            >
                 <div>
-                    <h3 className="text-xl md:text-2xl font-header mb-3 text-white">
+                    <h3 className="text-xl md:text-2xl font-header font-bold mb-1 text-white">
                         {title}
                     </h3>
-                    <p className="text-lg md:text-xl font-text leading-relaxed">
+
+                    {(startDate || endDate) && (
+                        <div className="flex flex-col gap-1 mb-2">
+                            {startDate && (
+                                <div className="flex items-center">
+                  <span className="text-accent font-text text-lg mr-2">
+                    Data rozpoczęcia projektu:
+                  </span>
+                                    <span className="text-accent font-text text-lg">{startDate}</span>
+                                </div>
+                            )}
+                            {endDate && (
+                                <div className="flex items-center">
+                  <span className="text-accent font-text text-lg mr-2">
+                    Data zakończenia projektu:
+                  </span>
+                                    <span className="text-accent font-text text-lg">{endDate}</span>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    <p className="text-lg md:text-xl font-text leading-relaxed text-white">
                         {description}
                     </p>
                 </div>
@@ -63,4 +90,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     );
 };
 
-export {ProjectCard};
+export { ProjectCard };
