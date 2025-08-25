@@ -30,7 +30,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
             rounded-[3vw] bg-element
-            flex flex-col-reverse md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}`}
+            flex flex-col-reverse md:flex-row ${
+                isRight ? "md:flex-row-reverse" : "md:flex-row"
+            }`}
         >
             <div
                 className="p-4 md:p-6 flex-1 flex flex-col justify-between items-center md:items-start text-center md:text-left">
@@ -40,16 +42,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     </h3>
 
                     {(startDate || endDate) && (
-                        <div className="flex flex-col gap-1 mb-2">
+                        <div className="flex flex-col md:flex-row gap-2 md:gap-6 mb-2">
                             {startDate && (
-                                <span className="text-xl font-text text-accent">
-                                    Data rozpoczęcia: {startDate}
-                                </span>
+                                <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+                                    <span className="text-xl font-text text-white font-semibold">
+                                        Data rozpoczęcia:
+                                    </span>
+                                    <span className="text-xl font-text text-accent">
+                                        {startDate}
+                                    </span>
+                                </div>
                             )}
                             {endDate && (
-                                <span className="text-xl font-text text-accent">
-                                    Data zakończenia: {endDate}
-                                </span>
+                                <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+                                    <span className="text-xl font-text text-white font-semibold">
+                                        Data zakończenia:
+                                    </span>
+                                    <span className="text-xl font-text text-accent">
+                                        {endDate}
+                                    </span>
+                                </div>
                             )}
                         </div>
                     )}
