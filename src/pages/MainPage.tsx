@@ -5,7 +5,7 @@
 // };
 
 import { Card } from "../components/Card";
-
+import { NavButton } from "../components/NavButton";
 const lorem = `🎓 Witajcie!
 Z ogromną radością ogłaszamy powstanie nowego koła naukowego KNIGP HyperSpec AGH, działającego przy kierunku Informatyka Geoprzestrzenna na WGGiIŚ AGH!
 Naszą misją jest rozwijanie pasji do informatyki, teledetekcji oraz nowoczesnych technologii poprzez realizację innowacyjnych projektów, badań i warsztatów. Działamy na styku przestrzeni, danych i technologii — eksplorując zastosowania sztucznej inteligencji, analizę danych z UAV, fotogrametrię i systemy informacji przestrzennej. Przed nami wiele pasjonujących projektów, spotkań, warsztatów i współprac.
@@ -21,10 +21,17 @@ Czym będziemy się zajmować?
 
 export const MainPage: React.FC = () => {
   return (
-    <main className="min-h-screen w-full bg-[#6b8f7b] py-10 lg:py-14">
+    <main className="min-h-screen py-10 lg:py-14 ">
+      <div className="flex justify-center mb-10 flex-col items-center">
+        <h2 className="text-xl font-bold mb-6 text-center w-full max-w-7xl px-10">{lorem}</h2>
+        <div>
+        <NavButton href="kontakt">Dołącz do nas</NavButton>
+        </div>
+      </div>
+      
       {/* Para #1: lewa przyklejona do lewego brzegu, prawa pływa -> prawa jest wyśrodkowana w swojej kolumnie */}
       <section className="w-full mb-12 lg:mb-16 xl:mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 2xl:grid-cols-2 gap-8 items-start">
           {/* LEWA (przyklejona) - na lg: start (zaczyna przy lewej krawędzi kolumny) */}
           <div className="w-full lg:justify-self:start lg:pl-0 px-4">
             <Card
