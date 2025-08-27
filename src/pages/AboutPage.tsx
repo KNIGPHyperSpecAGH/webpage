@@ -1,20 +1,31 @@
 import groupPhoto from "../assets/group_photo.jpg";
+import blazej from "../assets/blazej.jpg";
+import piotr from "../assets/piotr.jpg";
+import natalia from "../assets/natalia.jpg";
+import krzysztof from "../assets/krzysztof.jpg";
+import milosz from "../assets/milosz.jpg";
+
 const ManagementCard = ({
   name,
   role,
+  imie,
 }: {
   name: string;
   role: string;
+  imie: string;
 }) => {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-element rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
       {/* Image */}
-      <div className="w-20 h-20 bg-gray-700 rounded-full mb-4"></div>
-
+      <img
+        src={imie}
+        alt={name}
+        className="w-20 h-20 bg-gray-700 rounded-full mb-4"
+      />
       {/* Text */}
       <div>
-        <p className="text-white font-bold text-lg">{name}</p>
-        <p className="text-gray-300 text-sm">{role}</p>
+        <p className="text-white font-bold text-xl">{name}</p>
+        <p className="text-gray-300 text-md">{role}</p>
       </div>
     </div>
   );
@@ -52,32 +63,29 @@ export const AboutPage = () => {
           {/* Grid of cards */}
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
             <ManagementCard
-              name="Imię Nazwisko"
-              role="Opiekun koła"
-            />
-            <ManagementCard
-              name="Imię Nazwisko"
-              role="Opiekun koła"
-            />
-            <ManagementCard
-              name="Imię Nazwisko"
+              name="Piotr Starzyk"
               role="Przewodniczący koła"
+              imie={piotr}
             />
             <ManagementCard
-              name="Imię Nazwisko"
+              name="Błażej Kiełkowski"
               role="Wiceprzewodniczący koła"
+              imie={blazej}
             />
             <ManagementCard
-              name="Imię Nazwisko"
+              name="Natalia Stec"
               role="Wiceprzewodnicząca koła"
+              imie={natalia}
             />
             <ManagementCard
-              name="Imię Nazwisko"
-              role="Przewodniczący sekcji"
+              name="Krzysztof Nowakowski"
+              role="Przewodniczący sekcji informatycznej"
+              imie={krzysztof}
             />
             <ManagementCard
-              name="Imię Nazwisko"
-              role="Przewodniczący sekcji"
+              name="Miłosz Sumara"
+              role="Przewodniczący sekcji teledetekcyjnej"
+              imie={milosz}
             />
           </div>
         </div>
