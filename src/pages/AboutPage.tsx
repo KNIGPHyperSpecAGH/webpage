@@ -24,8 +24,8 @@ const ManagementCard = ({
       />
       {/* Text */}
       <div>
-        <p className="text-white font-bold text-lg">{name}</p>
-        <p className="text-gray-300 text-sm">{role}</p>
+        <p className="text-white font-bold text-xl">{name}</p>
+        <p className="text-gray-300 text-md">{role}</p>
       </div>
     </div>
   );
