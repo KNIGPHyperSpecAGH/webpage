@@ -5,7 +5,7 @@
 // };
 
 import { Card } from "../components/Card";
-
+import { NavButton } from "../components/NavButton";
 const lorem = `🎓 Witajcie!
 Z ogromną radością ogłaszamy powstanie nowego koła naukowego KNIGP HyperSpec AGH, działającego przy kierunku Informatyka Geoprzestrzenna na WGGiIŚ AGH!
 Naszą misją jest rozwijanie pasji do informatyki, teledetekcji oraz nowoczesnych technologii poprzez realizację innowacyjnych projektów, badań i warsztatów. Działamy na styku przestrzeni, danych i technologii — eksplorując zastosowania sztucznej inteligencji, analizę danych z UAV, fotogrametrię i systemy informacji przestrzennej. Przed nami wiele pasjonujących projektów, spotkań, warsztatów i współprac.
@@ -21,18 +21,26 @@ Czym będziemy się zajmować?
 
 export const MainPage: React.FC = () => {
   return (
-    <main className="min-h-screen w-full bg-[#6b8f7b] py-10 lg:py-14">
+    <main className="min-h-screen py-10 lg:py-14 ">
+      <div className="flex justify-center mb-10 flex-col items-center">
+        <h2 className="text-2xl font-bold mb-6 text-center w-full max-w-7xl px-10">Witaj w naszym nowym kole naukowym!</h2>
+        <div>
+        <NavButton href="kontakt">Dołącz do nas</NavButton>
+        </div>
+      </div>
+      
       {/* Para #1: lewa przyklejona do lewego brzegu, prawa pływa -> prawa jest wyśrodkowana w swojej kolumnie */}
       <section className="w-full mb-12 lg:mb-16 xl:mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 2xl:grid-cols-2 gap-8 items-start">
           {/* LEWA (przyklejona) - na lg: start (zaczyna przy lewej krawędzi kolumny) */}
           <div className="w-full lg:justify-self:start lg:pl-0 px-4">
             <Card
-              title="Tytuł"
+              title="Najnowszy Projekt"
               date="24 LIP"
               description={lorem}
               imageUrl="https://images.unsplash.com/photo-1551921038-a9009c20adb3?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alignLeft
+              link = "projekty"
             />
           </div>
 
@@ -41,38 +49,12 @@ export const MainPage: React.FC = () => {
                będzie zgodny w obu wierszach) */}
           <div className="w-full lg:justify-self:center px-4">
             <Card
-              title="Tytuł"
+              title="Ostatnie osiągnięcia"
               date="20 LIP"
               description={lorem}
               imageUrl="https://images.unsplash.com/photo-1483651646696-c1b5fe39fc0e?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alignLeft={false}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Para #2: odwrotnie -> lewa pływa (center), prawa przyklejona do prawej (end) */}
-      <section className="w-full mb-12 lg:mb-16 xl:mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* LEWA (pływająca) */}
-          <div className="w-full lg:justify-self:center px-4">
-            <Card
-              title="Tytuł"
-              date="01 SIE"
-              description={lorem}
-              imageUrl="https://images.unsplash.com/photo-1716434993058-c4678e905967?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alignLeft
-            />
-          </div>
-
-          {/* PRAWA (przyklejona) - na lg: end (przy prawej krawędzi) */}
-          <div className="w-full lg:justify-self:end lg:pr-0 px-4">
-            <Card
-              title="Tytuł"
-              date="02 SIE"
-              description={lorem}
-              imageUrl="https://images.unsplash.com/photo-1540198163009-7afda7da2945?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alignLeft={false}
+              link = "osiagniecia"
             />
           </div>
         </div>
