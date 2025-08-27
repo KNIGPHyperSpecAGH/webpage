@@ -9,6 +9,7 @@ export interface CardProps {
   imageUrl: string;
   /** true = obrazek po lewej, false = obrazek po prawej (desktop) */
   alignLeft?: boolean;
+  link: string;
 }
 
 
@@ -18,6 +19,7 @@ export const Card: React.FC<CardProps> = ({
   date,
   description,
   imageUrl,
+  link,
   alignLeft = true,
 }) => {
   return (
@@ -33,7 +35,7 @@ export const Card: React.FC<CardProps> = ({
       <div className="w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col">
         <Photo src={imageUrl} alt={title} />
 
-        <NavButton>
+        <NavButton href = {link}>
           Więcej
         </NavButton>
       </div>
