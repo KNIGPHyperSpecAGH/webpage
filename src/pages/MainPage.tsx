@@ -23,7 +23,7 @@ export const MainPage: React.FC = () => {
   return (
     <main className="min-h-screen py-10 lg:py-14 ">
       <div className="flex justify-center mb-10 flex-col items-center">
-        <h2 className="text-xl font-bold mb-6 text-center w-full max-w-7xl px-10">Witaj niwerovnb noeiwf weoniwoe qnfwoq ienfqowein </h2>
+        <h2 className="text-2xl font-bold mb-6 text-center w-full max-w-7xl px-10">Witaj w naszym nowym kole naukowym!</h2>
         <div>
         <NavButton href="kontakt">Dołącz do nas</NavButton>
         </div>
