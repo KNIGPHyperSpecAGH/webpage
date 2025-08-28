@@ -39,7 +39,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
     return (
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
-        rounded-[3vw] bg-element
+        rounded-3xl bg-element
         flex flex-col md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
         hover:shadow-lg transition-shadow`}
         >
@@ -53,7 +53,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 {date && (
                     <div
                         className={`absolute flex flex-col items-center justify-center
-                          w-24 h-24 bg-accent text-white rounded-[1.5vw] shadow-md
+                          w-24 h-24 bg-accent text-white rounded-3xl shadow-md
                           ${isRight ? "bottom-4 right-4" : "bottom-4 left-4"}`}
                     >
                         <span className="text-2xl font-bold">{day}</span>

@@ -7,7 +7,7 @@ interface PhotoProps {
 
 export const Photo: React.FC<PhotoProps> = ({ src, alt }) => {
   return (
-    <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl">
+    <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg">
       <img
         src={src}
         alt={alt}

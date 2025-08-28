@@ -15,7 +15,7 @@ const ManagementCard = ({
   imie: string;
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-element rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
+    <div className="flex flex-col items-center justify-center w-full bg-element  rounded-3xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
       {/* Image */}
       <img
         src={imie}
@@ -37,7 +37,7 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center px-4 py-8 pt-20">
       {/* Section: About */}
-      <div className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-[3vw]">
+      <div className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-3xl">
         <p className="text-white text-2xl leading-relaxed lg:w-1/2 text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
           dolor sit amet consectetur adipisicing elit. Nobis quia corporis
@@ -47,7 +47,7 @@ export const AboutPage = () => {
         <img
           src={groupPhoto}
           alt="About us"
-          className="rounded-2xl shadow-lg lg:w-1/2 w-full h-auto object-cover"
+          className="rounded-xl shadow-lg lg:w-1/2 w-full h-auto object-cover"
         />
       </div>
 
