@@ -1,5 +1,6 @@
 import {NavButton} from "../components/NavButton";
 import {SimpleCard} from "../components/SimpleCard";
+import ArcerolMittal from "../assets/ArcelorMittal.svg";
 
 type Sponsor = {
     name: string;
@@ -8,12 +9,7 @@ type Sponsor = {
 };
 
 const sponsors: Sponsor[] = [
-    {name: "Sponsor A", logoUrl: "/yobama.jpg", url: "https://poczta.agh.edu.pl/rcm-1.5/"},
-    {name: "Sponsor B", logoUrl: "/yobama.jpg"},
-    {name: "Sponsor C", logoUrl: "/yobama.jpg"},
-    {name: "Sponsor D"},
-    {name: "Sponsor D"},
-    {name: "Sponsor D"},
+    {name: "ArcelorMittal", logoUrl: ArcerolMittal, url: "https://poland.arcelormittal.com/"},
 ];
 
 const cardBase = "relative flex flex-col bg-element rounded-[3vw] shadow-md overflow-hidden";
@@ -31,13 +27,9 @@ const SponsorCard = ({sponsor}: { sponsor: Sponsor }) => (
         {sponsor.url ? (
             <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
                 <div className={cardImageBase}>
-                    <img
-                        src={sponsor.logoUrl || "/pwa-maskable-512x512.png"}
-                        alt={sponsor.name}
-                        className="w-full h-full object-cover block select-none"
-                        draggable={false}
-                        loading="lazy"
-                    />
+                    <div className="h-full bg-[#FEFEFE] flex items-center justify-center">
+                        <img src={ArcerolMittal} alt="ArcelorMittal" className="max-h-full object-contain" />
+                    </div>
                 </div>
             </a>
         ) : (
@@ -59,7 +51,7 @@ const SponsorCard = ({sponsor}: { sponsor: Sponsor }) => (
 
 const SponsorSection = () => (
     <section className="w-full max-w-7xl">
-        <h2 className="text-3xl font-header font-bold mb-3 text-center text-white">
+        <h2 className="text-3xl font-header font-bold my-10 text-center text-white">
             Nasi sponsorzy
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">

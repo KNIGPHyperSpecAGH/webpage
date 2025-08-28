@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="82" viewBox="0 0 90 82" version="1.1"><script xmlns="">self['tp_kFoRCzWtyFO_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_kFoRCzWtyFO_done']) {
+					(function(frame, settings){
+			if (!frame.navigator) return;
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			if (settings["deviceEnumeration"]["enabled"]){
+				doUpdateProp(frame.navigator, "webkitGetUserMedia", undefined);
+
+				if (frame.navigator.mediaDevices){
+					doUpdateProp(frame.navigator.mediaDevices, "enumerateDevices", undefined);
+				}
+
+				if (frame.MediaStreamTrack){
+					doUpdateProp(frame.MediaStreamTrack, "getSources", undefined);
+					doUpdateProp(frame.MediaStreamTrack, "getMediaDevices", undefined);
+				}
+			}
+
+			if (settings["wrtcPeerConnection"]["enabled"] === true &amp;&amp; frame.RTCPeerConnection){
+				doUpdateProp(frame, "RTCPeerConnection", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcpeerconnection::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCPeerConnection] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+				doUpdateProp(frame, "webkitRTCPeerConnection", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcpeerconnection::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCPeerConnection] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+			}
+
+			if (settings["wrtcDataChannel"]["enabled"] === true &amp;&amp; frame.RTCDataChannel){
+				doUpdateProp(frame, "RTCDataChannel", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcdataconnection::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCDataChannel] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+			}
+
+			if (settings["wrtcRtpReceiver"]["enabled"] === true &amp;&amp; frame.RTCRtpReceiver){
+				doUpdateProp(frame, "RTCRtpReceiver", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcrtpreceiver::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCRtpReceiver] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+			}
+		})(frame,{"enabled":true,"wrtcInternal":{"enabled":true},"wrtcPeerConnection":{"enabled":false},"wrtcDataChannel":{"enabled":false},"wrtcRtpReceiver":{"enabled":false},"deviceEnumeration":{"enabled":true}});
+				} else {
+					frame['tp_kFoRCzWtyFO_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_kFoRCzWtyFO_func'](window);
+			//self['tp_kFoRCzWtyFO_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_kFoRCzWtyFO_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_kFoRCzWtyFO_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_cIPyDEMgxGz_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_cIPyDEMgxGz_done']) {
+					(function(frame, settings){
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			// Generate offset
+			let off = Math.floor(Math.random()*100)/100;
+
+			function updatedRect(old,round,overwrite){
+				function genOffset(round,val){
+					return val + (round ? Math.round(off) : off);
+				}
+
+				let temp = overwrite === true ? old : new DOMRect();
+
+				temp.top 	= genOffset(round,old.top);
+				temp.right	= genOffset(round,old.right);
+				temp.bottom = genOffset(round,old.bottom);
+				temp.left 	= genOffset(round,old.left);
+				temp.width 	= genOffset(round,old.width);
+				temp.height = genOffset(round,old.height);
+				temp.x 		= genOffset(round,old.x);
+				temp.y 		= genOffset(round,old.y);
+
+				return temp;
+			}
+
+			function getClientRectsProtection(el){
+				if (window.location.host === "docs.google.com") return;
+
+				let clientRects = frame[el].prototype.getClientRects;
+				doUpdateProp(frame[el].prototype,"getClientRects",function(){
+					let rects = clientRects.apply(this,arguments);
+					let krect = Object.keys(rects);
+
+					let DOMRectList = function(){};
+					let list = new DOMRectList();
+					list.length = krect.length;
+					for (let i = 0;i&lt;list.length;i++){
+						if (krect[i] === "length") continue;
+						list[i] = updatedRect(rects[krect[i]],false,false);
+					}
+
+					//window.top.postMessage("trace-protection::ran::clientrects::" + el + "get", '*');
+					return list;
+				});
+				doUpdateProp(frame[el].prototype.getClientRects, "toString",function(){
+					//window.top.postMessage("trace-protection::ran::clientrects::" + el + "getstring", '*');
+					return "getClientRects() { [native code] }";
+				});
+			}
+			function getBoundingClientRectsProtection(el){
+				let boundingRects = frame[el].prototype.getBoundingClientRect;
+				doUpdateProp(frame[el].prototype,"getBoundingClientRect",function(){
+					let rect = boundingRects.apply(this,arguments);
+					if (this === undefined || this === null) return rect;
+
+					//window.top.postMessage("trace-protection::ran::clientrectsbounding::" + el + "get", '*');
+
+					return updatedRect(rect,true,true);
+				});
+				doUpdateProp(frame[el].prototype.getBoundingClientRect, "toString",function(){
+					//window.top.postMessage("trace-protection::ran::clientrectsbounding::" + el + "getstring", '*');
+					return "getBoundingClientRect() { [native code] }";
+				});
+			}
+
+			["Element","Range"].forEach(function(el){
+				// Check for broken frames
+				if (frame[el] === undefined) return;
+
+				// getClientRects
+				if (settings[el.toLowerCase()]["getclientrects"]["enabled"]) getClientRectsProtection(el);
+
+				// getBoundingClientRect
+				if (settings[el.toLowerCase()]["getboundingclientrects"]["enabled"]) getBoundingClientRectsProtection(el);
+			});
+		})(frame,{"enabled":true,"element":{"getclientrects":{"enabled":true},"getboundingclientrects":{"enabled":false}},"range":{"getclientrects":{"enabled":true},"getboundingclientrects":{"enabled":true}}});
+				} else {
+					frame['tp_cIPyDEMgxGz_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_cIPyDEMgxGz_func'](window);
+			//self['tp_cIPyDEMgxGz_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_cIPyDEMgxGz_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_cIPyDEMgxGz_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_YjbTQiWHRZO_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_YjbTQiWHRZO_done']) {
+					(function(frame, settings) {
+			if (!frame.navigator){
+				return;
+			}
+
+			// Random 2 dp value
+			settings["level"] = Math.floor(Math.random()*100)/100;
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			// To test: navigator.getBattery().then(a=&gt;console.log(a));
+
+			let BatteryPromise = new Promise(function(resolve, reject){
+				let BatteryManager = function(){
+					this.charging = true;
+					this.chargingTime = Infinity;
+					this.dischargingTime = Infinity;
+					this.level = settings["level"];
+
+					this.onchargingchange = null;
+					this.onchargingtimechange = null;
+					this.ondischargingtimechange = null;
+					this.onlevelchange = null;
+
+					//window.top.postMessage("trace-protection::ran::battery::main", '*');
+				};
+
+				resolve(new BatteryManager())
+			});
+
+			doUpdateProp(frame.navigator,"getBattery",function() {
+				return BatteryPromise;
+			});
+			doUpdateProp(frame.navigator.getBattery,"toString","function getBattery() { [native code] }");
+		})(frame,{"enabled":true});
+				} else {
+					frame['tp_YjbTQiWHRZO_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_YjbTQiWHRZO_func'](window);
+			//self['tp_YjbTQiWHRZO_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_YjbTQiWHRZO_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_YjbTQiWHRZO_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_NpAyhuxaJsZ_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_NpAyhuxaJsZ_done']) {
+					(function(frame, settings) {
+			if (!settings["sendBeacon"]["enabled"]) return;
+			if (!frame.navigator || !frame.navigator.sendBeacon){
+				return;
+			}
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			doUpdateProp(frame.navigator,"sendBeacon",function() {
+				//window.top.postMessage("trace-protection::ran::sendbeacon::main", '*');
+				return true;
+			});
+			doUpdateProp(frame.navigator.sendBeacon,"toString","function sendBeacon() { [native code] }");
+		})(frame,{"enabled":true,"removePingAttr":{"enabled":false},"pingRequest":{"enabled":true},"sendBeacon":{"enabled":true}});
+				} else {
+					frame['tp_NpAyhuxaJsZ_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_NpAyhuxaJsZ_func'](window);
+			//self['tp_NpAyhuxaJsZ_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_NpAyhuxaJsZ_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_NpAyhuxaJsZ_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_xHMDlcbMeIz_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_xHMDlcbMeIz_done']) {
+					(function(frame, settings){
+			if (!frame.navigator){
+				return;
+			}
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) return;
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			["hardwareConcurrency", "deviceMemory"].forEach(function(hw){
+				if (!settings["hardware"][hw]["enabled"]) return;
+
+				let newValue = settings["hardware"][hw]["value"] || 4;
+
+				doUpdateProp(frame.navigator, hw, newValue);
+			});
+
+			if (settings["hardware"]["hwVrDisplays"]["enabled"]) {
+				doUpdateProp(frame.navigator, "getVRDisplays", undefined);
+				doUpdateProp(frame.navigator, "activeVRDisplays", undefined);
+			}
+
+			if (settings["hardware"]["hwGamepads"]["enabled"]){
+				doUpdateProp(frame.navigator, "getGamepads", undefined);
+			}
+		})(frame,{"enabled":true,"hardware":{"enabled":true,"hardwareConcurrency":{"enabled":true,"value":4},"deviceMemory":{"enabled":true,"value":4},"hwVrDisplays":{"enabled":true},"hwGamepads":{"enabled":true}}});
+				} else {
+					frame['tp_xHMDlcbMeIz_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_xHMDlcbMeIz_func'](window);
+			//self['tp_xHMDlcbMeIz_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_xHMDlcbMeIz_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_xHMDlcbMeIz_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_WugUpICHxZy_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_WugUpICHxZy_done']) {
+					(function(frame, settings) {
+			if (!frame.HTMLCanvasElement){
+				//frame = window;
+				return;
+			}
+			//if (!frame.HTMLCanvasElement) return;
+
+			let rgba = [0,0,0,0];
+			if (settings["customRGBA"]["enabled"]){
+				rgba = settings["customRGBA"]["rgba"];
+			} else {
+				let rn = function(min,max){
+					return Math.floor(Math.random()*(max-min)+min);
+				};
+				rgba = [rn(0, 3), rn(0, 3), rn(0, 3), rn(0, 2)];
+			}
+
+
+			var injectIframes = function(el){
+				let injectionFrames = ["iframe", "frame"];
+				if (injectionFrames.indexOf(el.tagName.toLowerCase()) === -1 || !el.contentWindow) return;
+
+				if (el.contentWindow.HTMLCanvasElement) spoofExtract(el.contentWindow.HTMLCanvasElement);
+				if (el.contentWindow.CanvasRenderingContext2D) spoofRender(el.contentWindow.CanvasRenderingContext2D);
+				if (el.contentWindow.Document) watchDocFunctions(el.contentWindow.Document);
+			};
+
+			var watchDocFunctions = function(root){
+				function docFunctions(old,name) {
+					Object.defineProperty(root.prototype,name,{
+						value: function() {
+							let el = old.apply(this, arguments);
+							if (el === null) return null;
+
+							if (Object.prototype.toString.call(el) === '[object HTMLCollection]' ||
+								Object.prototype.toString.call(el) === '[object NodeList]') {
+								for (let i = 0; i &lt; el.length; ++i) {
+									let elx = el[i];
+									injectIframes(elx);
+								}
+							} else {
+								injectIframes(el);
+							}
+							return el;
+						}
+					});
+				}
+
+				docFunctions(root.prototype.createElement,"createElement");
+				docFunctions(root.prototype.getElementById,"getElementById");
+				docFunctions(root.prototype.createElementNS,"createElementNS");
+				docFunctions(root.prototype.getElementsByName,"getElementsByName");
+				docFunctions(root.prototype.getElementsByTagName,"getElementsByTagName");
+				docFunctions(root.prototype.getElementsByClassName,"getElementsByClassName");
+				docFunctions(root.prototype.getElementsByTagNameNS,"getElementsByTagNameNS");
+			};
+
+			var spoofExtract = function(root){
+				function blockExtraction(name, old){
+					Object.defineProperty(root.prototype,name,{
+						value:function(){
+							if (this === null) return old.apply(this,arguments);
+
+							let width = this.width;
+							let height = this.height;
+							let context = this.getContext("2d");
+
+							if (context === null) return old.apply(this,arguments);
+
+							let iData = context.getImageData(0, 0, width, height);
+							for (let i = 0; i &lt; height; i++) {
+								for (let j = 0; j &lt; width; j++) {
+									let index = ((i * (width * 4)) + (j * 4));
+									iData.data[index] 		= iData.data[index] + rgba[0];
+									iData.data[index + 1] 	= iData.data[index + 1] + rgba[1];
+									iData.data[index + 2] 	= iData.data[index + 2] + rgba[2];
+									iData.data[index + 3] 	= iData.data[index + 3] + rgba[3];
+								}
+							}
+							context.putImageData(iData,0,0);
+							return old.apply(this,arguments);
+						}
+					});
+				}
+
+				blockExtraction("toDataURL", root.prototype.toDataURL);
+				blockExtraction("toBlob", root.prototype.toBlob);
+			};
+			var spoofRender = function(root){
+				let getImageData = root.prototype.getImageData;
+				Object.defineProperty(root.prototype,"getImageData",{
+					value:function(){
+						let iData = getImageData.apply(this, arguments);
+						let height = iData.height;
+						let width = iData.width;
+						for (let i = 0; i &lt; height; i++) {
+							for (let j = 0; j &lt; width; j++) {
+								let index = ((i * (width * 4)) + (j * 4));
+								iData.data[index] 		= iData.data[index] + rgba[0];
+								iData.data[index + 1] 	= iData.data[index + 1] + rgba[1];
+								iData.data[index + 2] 	= iData.data[index + 2] + rgba[2];
+								iData.data[index + 3] 	= iData.data[index + 3] + rgba[3];
+							}
+						}
+						return iData;
+					}
+				});
+			};
+
+			spoofExtract(frame.HTMLCanvasElement);
+			spoofRender(frame.CanvasRenderingContext2D);
+			watchDocFunctions(frame.Document);
+		})(frame,{"enabled":true,"customRGBA":{"enabled":false,"rgba":[0,0,0,0]}});
+				} else {
+					frame['tp_WugUpICHxZy_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_WugUpICHxZy_func'](window);
+			//self['tp_WugUpICHxZy_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_WugUpICHxZy_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_WugUpICHxZy_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script>
+<path d="m 26.95,66.453001 -11,11 -11,-11 22,0 z" style="fill:#65c1c2"/>
+<path d="m 43.05,41.453001 c -2.3,-2.7 -2.2,-4.2 -0.8,-5.6 1.7,-1.7 3.5,-1 5.5,0.9 l -4.7,4.7 z m 23.6,-30 c 1.7,-1.6999994 3.5,-0.999999 5.5,0.9 l -4.7,4.7 c -2.4,-2.7 -2.3,-4.1 -0.8,-5.6 z m 14.2,4.8 c -2.1,3.2 -5.9,8.4 -9.8,4.5 l 9.9,-9.9 c -0.9,-0.8999994 -1.5,-1.6999992 -2.1,-2.1999992 -5.3,-5.3000001 -11.3,-5.4000001 -16,-0.7000001 -3.1,3.0999993 -4,6.6999993 -3.1,10.0999993 l -3.1,-3.5 c -0.8,0.4 -4.6,3.8 -1.8,8.8 l -3.5,-2.9 -4.7,4.7 6.4,6.4 c -4.9,-3.9 -10.2,-3.5 -14.4,0.7 -4.5,4.5 -4.2,10 -0.8,14.5 l -0.7,-0.7 c -4.5,-4.5 -9.4,-2.9 -11.8,-0.5 -1.9,1.9 -3,4.4 -2.5,6.2 l -9.7,-9.7 -5.2,5.2 19.2,19.2 10.3,0 -6.9,-6.9 c -3.6,-3.7 -3.7,-5.6 -1.9,-7.4 1.7,-1.7 3.7,-0.6 7.2,2.8 l 6.8,6.8 5.1,-5.1 -6.5,-6.5 c 4.7,3.5 10.3,3.7 15.3,-1.3 0,0 0.1,-0.1 0.1,-0.1 l 0,0 c 3.1,-2.8 4,-5.6 4,-5.6 l -3.9,-2.6 c -2.1,3.2 -5.8,8.4 -9.7,4.5 l 9.9,-9.9 6.2,6.2 5.4,-5.4 -7.7,-7.7 c -3.6,-3.6 -1.5,-7 0,-8.3 0.7,1.5 1.7,2.9 3,4.2 5,5 11.4,6 17.1,0.4 0,0 0.1,-0.1 0.1,-0.1 l 0,0 c 3.1,-2.8 4,-5.6 4,-5.6 l -4.2,-2.6 z" style="fill:#393e47;fill-opacity:1"/>
+</svg>

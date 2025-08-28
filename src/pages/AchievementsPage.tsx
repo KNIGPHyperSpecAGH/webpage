@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {NavButton} from "../components/NavButton";
 import {SimpleCard} from "../components/SimpleCard";
-
+import here from "../assets/HERE_logo.svg";
 type Achievement = {
     title: string;
     date: string;
@@ -14,35 +14,19 @@ type Achievement = {
 const achievements: Achievement[] = [
     {
         title: "Wygrana",
-        date: "01.01.2024",
+        date: "13.06.2025",
         description: "Nasze pierwsze, pierwsze miejsce!",
         details: "S",
         place: 1,
-        imageUrl: "/yobama.jpg"
+        imageUrl: here
     },
     {
-        title: "Wygraliśmy!",
-        date: "01.01.2024",
-        description: "Nasze pierwsze, pierwsze miejsce!",
-        details: "S",
+        title: "Miejsce na podium",
+        date: "13.06.2025",
+        description: "Drugi zespół z naszego koła zajął miejsce na podium!",
+        details: "Podczas Hackathonu geoprzestrzennego organizowanego przez firmę HERE Technologies, nasz drugi zespół opracował rozwiązanie problemu oparte o zaawansowane metody przestrzennego uczenia maszynowego, dzięki czemu udało się nam zająć 3 miejsce.",
         place: 3,
-        imageUrl: "/yobama.jpg"
-    },
-    {title: "Wygraliśmy!", date: "01.01.2024", description: "Nasze pierwsze, pierwsze miejsce!", details: "S"},
-    {
-        title: "Wygraliśmy!",
-        date: "01.01.2024",
-        description: "Nasze pierwsze, pierwsze miejsce!",
-        details: "S",
-        place: 2,
-        imageUrl: "/yobama.jpg"
-    },
-    {
-        title: "Wygraliśmy!",
-        date: "01.12.2024",
-        description: "Nasze pierwsze, pierwsze miejsce!",
-        details: "S",
-        place: 7
+        imageUrl: here
     },
 ];
 
