@@ -1,11 +1,6 @@
-// export const MainPage = () => {
-//     return (
-//         <>MainPage</>
-//     );
-// };
-
 import { Card } from "../components/Card";
 import { NavButton } from "../components/NavButton";
+import logo from "../assets/logo_full.svg";
 const lorem = `🎓 Witajcie!
 Z ogromną radością ogłaszamy powstanie nowego koła naukowego KNIGP HyperSpec AGH, działającego przy kierunku Informatyka Geoprzestrzenna na WGGiIŚ AGH!
 Naszą misją jest rozwijanie pasji do informatyki, teledetekcji oraz nowoczesnych technologii poprzez realizację innowacyjnych projektów, badań i warsztatów. Działamy na styku przestrzeni, danych i technologii — eksplorując zastosowania sztucznej inteligencji, analizę danych z UAV, fotogrametrię i systemy informacji przestrzennej. Przed nami wiele pasjonujących projektów, spotkań, warsztatów i współprac.
@@ -23,6 +18,7 @@ export const MainPage: React.FC = () => {
   return (
     <main className="min-h-screen py-10 lg:py-14 ">
       <div className="flex justify-center mb-10 flex-col items-center">
+        <img src={logo} alt="Logo" className="mb-4 h-60" />
         <h2 className="text-2xl font-bold mb-6 text-center w-full max-w-7xl px-10">Witaj w naszym nowym kole naukowym!</h2>
         <div>
         <NavButton href="kontakt">Dołącz do nas</NavButton>
