@@ -50,10 +50,10 @@ const AchievementCard = ({ach, onOpen}: { ach: Achievement; onOpen: () => void }
     const borderClass = ach.place ? placeRingMap[ach.place] || "" : "";
 
     return (
-        <div className="relative flex flex-col bg-element rounded-[3vw] shadow-md overflow-hidden">
+        <div className="relative flex flex-col bg-element rounded-[5rem] shadow-md overflow-hidden">
             {badge && <div
                 className={`absolute top-0 left-1/2 transform -translate-x-1/2 z-1 px-5 py-3 text-sm font-text shadow-md rounded-b-3xl ${badge.color}`}>{badge.label}</div>}
-            <div className={`relative w-full aspect-[3/4] overflow-hidden rounded-[3vw] ${borderClass}`}>
+            <div className={`relative w-full aspect-[3/4] overflow-hidden rounded-3xl ${borderClass}`}>
                 <img src={ach.imageUrl || "/pwa-maskable-512x512.png"} alt={ach.title}
                      className="w-full h-full object-cover"/>
             </div>
@@ -75,7 +75,8 @@ const AchievementModal = ({ach, onClose}: { ach: Achievement; onClose: () => voi
     <div className="fixed inset-0 bg-background/85 flex items-center justify-center z-50 overflow-auto"
          onClick={onClose}>
         <div
-            className="bg-element text-white p-10 rounded-[3vw] max-w-3xl w-full shadow-lg relative max-h-[90vh] overflow-y-auto"
+            className="bg-element text-white p-10 rounded-3xl
+             max-w-3xl w-full shadow-lg relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}>
             <button className="absolute top-8 right-8 text-white text-3xl font-text hover:text-accent"
                     onClick={onClose}>X
@@ -133,7 +134,7 @@ const AchievementSection = () => {
 export const AchievementsPage = () => (
     <div className="min-h-screen bg-background flex flex-col items-center py-10 px-4 text-white text-center pt-20">
         <AchievementSection/>
-        <div className="w-full max-w-7xl px-0 mt-6 sm:mt-3 flex justify-center">
+        <div className="w-full max-w-7xl px-0 mt-20 flex justify-center">
             <SimpleCard header="Co dalej?"
                         text="Dołącz do nas! Szukamy nowych osób do sekcji informatyki oraz teledetekcji ">
                 <NavButton href="/kontakt">Dołącz teraz</NavButton>
