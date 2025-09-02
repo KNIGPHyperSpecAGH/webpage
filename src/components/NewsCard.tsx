@@ -39,7 +39,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
     return (
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
-        rounded-3xl bg-element
+        rounded-3xl bg-element p-2
         flex flex-col md:flex-row ${isRight ? "md:flex-row-reverse" : "md:flex-row"}
         hover:shadow-lg transition-shadow`}
         >
