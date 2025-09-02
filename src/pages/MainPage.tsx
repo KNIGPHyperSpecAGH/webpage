@@ -26,7 +26,7 @@ export const MainPage: React.FC = () => {
           <div className="w-full lg:justify-self:start lg:pl-0 px-4">
             <Card
               title="Najnowszy Projekt"
-              date="24 LIP"
+              date="15 LIP"
               description={newProject}
               imageUrl="leba.jpg"
               alignLeft
@@ -40,7 +40,7 @@ export const MainPage: React.FC = () => {
           <div className="w-full lg:justify-self:center px-4">
             <Card
               title="Ostatnie osiągnięcia"
-              date="20 LIP"
+              date="13 CZE"
               description={newAchivment}
               imageUrl="HERE_logo.svg"
               alignLeft={false}
