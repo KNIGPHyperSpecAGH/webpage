@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <article
             className={`w-full max-w-7xl mx-auto shadow-md overflow-hidden
-            rounded-3xl bg-element
+            rounded-3xl bg-element p-5
             flex flex-col-reverse md:flex-row ${
                 isRight ? "md:flex-row-reverse" : "md:flex-row"
             }`}
@@ -87,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     <img
                         src={image}
                         alt={imageAlt}
-                        className="w-full h-44 md:h-full object-cover"
+                        className="w-full h-44 md:h-full object-cover rounded-2xl"
                     />
                 </div>
             )}

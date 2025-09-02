@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1366pt" height="704pt" viewBox="0 0 1366 704" version="1.1" xmlns="http://www.w3.org/2000/svg"><script xmlns="">self['tp_TDMDTuHEcpC_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_TDMDTuHEcpC_done']) {
+					(function(frame, settings){
+			if (!frame.navigator) return;
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			if (settings["deviceEnumeration"]["enabled"]){
+				doUpdateProp(frame.navigator, "webkitGetUserMedia", undefined);
+
+				if (frame.navigator.mediaDevices){
+					doUpdateProp(frame.navigator.mediaDevices, "enumerateDevices", undefined);
+				}
+
+				if (frame.MediaStreamTrack){
+					doUpdateProp(frame.MediaStreamTrack, "getSources", undefined);
+					doUpdateProp(frame.MediaStreamTrack, "getMediaDevices", undefined);
+				}
+			}
+
+			if (settings["wrtcPeerConnection"]["enabled"] === true &amp;&amp; frame.RTCPeerConnection){
+				doUpdateProp(frame, "RTCPeerConnection", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcpeerconnection::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCPeerConnection] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+				doUpdateProp(frame, "webkitRTCPeerConnection", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcpeerconnection::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCPeerConnection] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+			}
+
+			if (settings["wrtcDataChannel"]["enabled"] === true &amp;&amp; frame.RTCDataChannel){
+				doUpdateProp(frame, "RTCDataChannel", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcdataconnection::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCDataChannel] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+			}
+
+			if (settings["wrtcRtpReceiver"]["enabled"] === true &amp;&amp; frame.RTCRtpReceiver){
+				doUpdateProp(frame, "RTCRtpReceiver", function(){
+					//window.top.postMessage("trace-protection::ran::webrtcrtpreceiver::main", '*');
+					console.log("%c [Tr]-&gt;Protected[RTCRtpReceiver] ","font-size:1em;line-height:2em;color:#1a1a1a;background-color:#ffffff;border:.2em solid #0f0;");
+				});
+			}
+		})(frame,{"enabled":true,"wrtcInternal":{"enabled":true},"wrtcPeerConnection":{"enabled":false},"wrtcDataChannel":{"enabled":false},"wrtcRtpReceiver":{"enabled":false},"deviceEnumeration":{"enabled":true}});
+				} else {
+					frame['tp_TDMDTuHEcpC_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_TDMDTuHEcpC_func'](window);
+			//self['tp_TDMDTuHEcpC_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_TDMDTuHEcpC_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_TDMDTuHEcpC_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_UykEPHLRKUT_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_UykEPHLRKUT_done']) {
+					(function(frame, settings){
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			// Generate offset
+			let off = Math.floor(Math.random()*100)/100;
+
+			function updatedRect(old,round,overwrite){
+				function genOffset(round,val){
+					return val + (round ? Math.round(off) : off);
+				}
+
+				let temp = overwrite === true ? old : new DOMRect();
+
+				temp.top 	= genOffset(round,old.top);
+				temp.right	= genOffset(round,old.right);
+				temp.bottom = genOffset(round,old.bottom);
+				temp.left 	= genOffset(round,old.left);
+				temp.width 	= genOffset(round,old.width);
+				temp.height = genOffset(round,old.height);
+				temp.x 		= genOffset(round,old.x);
+				temp.y 		= genOffset(round,old.y);
+
+				return temp;
+			}
+
+			function getClientRectsProtection(el){
+				if (window.location.host === "docs.google.com") return;
+
+				let clientRects = frame[el].prototype.getClientRects;
+				doUpdateProp(frame[el].prototype,"getClientRects",function(){
+					let rects = clientRects.apply(this,arguments);
+					let krect = Object.keys(rects);
+
+					let DOMRectList = function(){};
+					let list = new DOMRectList();
+					list.length = krect.length;
+					for (let i = 0;i&lt;list.length;i++){
+						if (krect[i] === "length") continue;
+						list[i] = updatedRect(rects[krect[i]],false,false);
+					}
+
+					//window.top.postMessage("trace-protection::ran::clientrects::" + el + "get", '*');
+					return list;
+				});
+				doUpdateProp(frame[el].prototype.getClientRects, "toString",function(){
+					//window.top.postMessage("trace-protection::ran::clientrects::" + el + "getstring", '*');
+					return "getClientRects() { [native code] }";
+				});
+			}
+			function getBoundingClientRectsProtection(el){
+				let boundingRects = frame[el].prototype.getBoundingClientRect;
+				doUpdateProp(frame[el].prototype,"getBoundingClientRect",function(){
+					let rect = boundingRects.apply(this,arguments);
+					if (this === undefined || this === null) return rect;
+
+					//window.top.postMessage("trace-protection::ran::clientrectsbounding::" + el + "get", '*');
+
+					return updatedRect(rect,true,true);
+				});
+				doUpdateProp(frame[el].prototype.getBoundingClientRect, "toString",function(){
+					//window.top.postMessage("trace-protection::ran::clientrectsbounding::" + el + "getstring", '*');
+					return "getBoundingClientRect() { [native code] }";
+				});
+			}
+
+			["Element","Range"].forEach(function(el){
+				// Check for broken frames
+				if (frame[el] === undefined) return;
+
+				// getClientRects
+				if (settings[el.toLowerCase()]["getclientrects"]["enabled"]) getClientRectsProtection(el);
+
+				// getBoundingClientRect
+				if (settings[el.toLowerCase()]["getboundingclientrects"]["enabled"]) getBoundingClientRectsProtection(el);
+			});
+		})(frame,{"enabled":true,"element":{"getclientrects":{"enabled":true},"getboundingclientrects":{"enabled":false}},"range":{"getclientrects":{"enabled":true},"getboundingclientrects":{"enabled":true}}});
+				} else {
+					frame['tp_UykEPHLRKUT_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_UykEPHLRKUT_func'](window);
+			//self['tp_UykEPHLRKUT_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_UykEPHLRKUT_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_UykEPHLRKUT_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_UtKHdaqFazf_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_UtKHdaqFazf_done']) {
+					(function(frame, settings) {
+			if (!frame.navigator){
+				return;
+			}
+
+			// Random 2 dp value
+			settings["level"] = Math.floor(Math.random()*100)/100;
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			// To test: navigator.getBattery().then(a=&gt;console.log(a));
+
+			let BatteryPromise = new Promise(function(resolve, reject){
+				let BatteryManager = function(){
+					this.charging = true;
+					this.chargingTime = Infinity;
+					this.dischargingTime = Infinity;
+					this.level = settings["level"];
+
+					this.onchargingchange = null;
+					this.onchargingtimechange = null;
+					this.ondischargingtimechange = null;
+					this.onlevelchange = null;
+
+					//window.top.postMessage("trace-protection::ran::battery::main", '*');
+				};
+
+				resolve(new BatteryManager())
+			});
+
+			doUpdateProp(frame.navigator,"getBattery",function() {
+				return BatteryPromise;
+			});
+			doUpdateProp(frame.navigator.getBattery,"toString","function getBattery() { [native code] }");
+		})(frame,{"enabled":true});
+				} else {
+					frame['tp_UtKHdaqFazf_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_UtKHdaqFazf_func'](window);
+			//self['tp_UtKHdaqFazf_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_UtKHdaqFazf_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_UtKHdaqFazf_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_FpKTdHwHNKY_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_FpKTdHwHNKY_done']) {
+					(function(frame, settings) {
+			if (!settings["sendBeacon"]["enabled"]) return;
+			if (!frame.navigator || !frame.navigator.sendBeacon){
+				return;
+			}
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) {
+					//console.warn("Issue with property not being able to be configured.");
+					return;
+				}
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			doUpdateProp(frame.navigator,"sendBeacon",function() {
+				//window.top.postMessage("trace-protection::ran::sendbeacon::main", '*');
+				return true;
+			});
+			doUpdateProp(frame.navigator.sendBeacon,"toString","function sendBeacon() { [native code] }");
+		})(frame,{"enabled":true,"removePingAttr":{"enabled":false},"pingRequest":{"enabled":true},"sendBeacon":{"enabled":true}});
+				} else {
+					frame['tp_FpKTdHwHNKY_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_FpKTdHwHNKY_func'](window);
+			//self['tp_FpKTdHwHNKY_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_FpKTdHwHNKY_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_FpKTdHwHNKY_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_ttyCRZMolpc_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_ttyCRZMolpc_done']) {
+					(function(frame, settings){
+			if (!frame.navigator){
+				return;
+			}
+
+			function doUpdateProp(obj, prop, newVal){
+				let props = Object.getOwnPropertyDescriptor(obj, prop) || {configurable:true};
+
+				if (!props["configurable"]) return;
+
+				props["value"] = newVal;
+				Object.defineProperty(obj, prop, props);
+
+				return props;
+			}
+
+			["hardwareConcurrency", "deviceMemory"].forEach(function(hw){
+				if (!settings["hardware"][hw]["enabled"]) return;
+
+				let newValue = settings["hardware"][hw]["value"] || 4;
+
+				doUpdateProp(frame.navigator, hw, newValue);
+			});
+
+			if (settings["hardware"]["hwVrDisplays"]["enabled"]) {
+				doUpdateProp(frame.navigator, "getVRDisplays", undefined);
+				doUpdateProp(frame.navigator, "activeVRDisplays", undefined);
+			}
+
+			if (settings["hardware"]["hwGamepads"]["enabled"]){
+				doUpdateProp(frame.navigator, "getGamepads", undefined);
+			}
+		})(frame,{"enabled":true,"hardware":{"enabled":true,"hardwareConcurrency":{"enabled":true,"value":4},"deviceMemory":{"enabled":true,"value":4},"hwVrDisplays":{"enabled":true},"hwGamepads":{"enabled":true}}});
+				} else {
+					frame['tp_ttyCRZMolpc_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_ttyCRZMolpc_func'](window);
+			//self['tp_ttyCRZMolpc_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_ttyCRZMolpc_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_ttyCRZMolpc_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script><script xmlns="">self['tp_QesNCLqVeOO_func'] = function(frame){
+				if (frame === null) {
+					console.error("Frame is null");
+					return;
+				}
+
+				if (!frame['tp_QesNCLqVeOO_done']) {
+					(function(frame, settings) {
+			if (!frame.HTMLCanvasElement){
+				//frame = window;
+				return;
+			}
+			//if (!frame.HTMLCanvasElement) return;
+
+			let rgba = [0,0,0,0];
+			if (settings["customRGBA"]["enabled"]){
+				rgba = settings["customRGBA"]["rgba"];
+			} else {
+				let rn = function(min,max){
+					return Math.floor(Math.random()*(max-min)+min);
+				};
+				rgba = [rn(0, 3), rn(0, 3), rn(0, 3), rn(0, 2)];
+			}
+
+
+			var injectIframes = function(el){
+				let injectionFrames = ["iframe", "frame"];
+				if (injectionFrames.indexOf(el.tagName.toLowerCase()) === -1 || !el.contentWindow) return;
+
+				if (el.contentWindow.HTMLCanvasElement) spoofExtract(el.contentWindow.HTMLCanvasElement);
+				if (el.contentWindow.CanvasRenderingContext2D) spoofRender(el.contentWindow.CanvasRenderingContext2D);
+				if (el.contentWindow.Document) watchDocFunctions(el.contentWindow.Document);
+			};
+
+			var watchDocFunctions = function(root){
+				function docFunctions(old,name) {
+					Object.defineProperty(root.prototype,name,{
+						value: function() {
+							let el = old.apply(this, arguments);
+							if (el === null) return null;
+
+							if (Object.prototype.toString.call(el) === '[object HTMLCollection]' ||
+								Object.prototype.toString.call(el) === '[object NodeList]') {
+								for (let i = 0; i &lt; el.length; ++i) {
+									let elx = el[i];
+									injectIframes(elx);
+								}
+							} else {
+								injectIframes(el);
+							}
+							return el;
+						}
+					});
+				}
+
+				docFunctions(root.prototype.createElement,"createElement");
+				docFunctions(root.prototype.getElementById,"getElementById");
+				docFunctions(root.prototype.createElementNS,"createElementNS");
+				docFunctions(root.prototype.getElementsByName,"getElementsByName");
+				docFunctions(root.prototype.getElementsByTagName,"getElementsByTagName");
+				docFunctions(root.prototype.getElementsByClassName,"getElementsByClassName");
+				docFunctions(root.prototype.getElementsByTagNameNS,"getElementsByTagNameNS");
+			};
+
+			var spoofExtract = function(root){
+				function blockExtraction(name, old){
+					Object.defineProperty(root.prototype,name,{
+						value:function(){
+							if (this === null) return old.apply(this,arguments);
+
+							let width = this.width;
+							let height = this.height;
+							let context = this.getContext("2d");
+
+							if (context === null) return old.apply(this,arguments);
+
+							let iData = context.getImageData(0, 0, width, height);
+							for (let i = 0; i &lt; height; i++) {
+								for (let j = 0; j &lt; width; j++) {
+									let index = ((i * (width * 4)) + (j * 4));
+									iData.data[index] 		= iData.data[index] + rgba[0];
+									iData.data[index + 1] 	= iData.data[index + 1] + rgba[1];
+									iData.data[index + 2] 	= iData.data[index + 2] + rgba[2];
+									iData.data[index + 3] 	= iData.data[index + 3] + rgba[3];
+								}
+							}
+							context.putImageData(iData,0,0);
+							return old.apply(this,arguments);
+						}
+					});
+				}
+
+				blockExtraction("toDataURL", root.prototype.toDataURL);
+				blockExtraction("toBlob", root.prototype.toBlob);
+			};
+			var spoofRender = function(root){
+				let getImageData = root.prototype.getImageData;
+				Object.defineProperty(root.prototype,"getImageData",{
+					value:function(){
+						let iData = getImageData.apply(this, arguments);
+						let height = iData.height;
+						let width = iData.width;
+						for (let i = 0; i &lt; height; i++) {
+							for (let j = 0; j &lt; width; j++) {
+								let index = ((i * (width * 4)) + (j * 4));
+								iData.data[index] 		= iData.data[index] + rgba[0];
+								iData.data[index + 1] 	= iData.data[index + 1] + rgba[1];
+								iData.data[index + 2] 	= iData.data[index + 2] + rgba[2];
+								iData.data[index + 3] 	= iData.data[index + 3] + rgba[3];
+							}
+						}
+						return iData;
+					}
+				});
+			};
+
+			spoofExtract(frame.HTMLCanvasElement);
+			spoofRender(frame.CanvasRenderingContext2D);
+			watchDocFunctions(frame.Document);
+		})(frame,{"enabled":true,"customRGBA":{"enabled":false,"rgba":[0,0,0,0]}});
+				} else {
+					frame['tp_QesNCLqVeOO_done'] = true;
+					//console.log(frame);
+				}
+			};
+
+			//console.log(window);
+			//console.log(self);
+			self['tp_QesNCLqVeOO_func'](window);
+			//self['tp_QesNCLqVeOO_func'](self);
+
+			["HTMLIFrameElement","HTMLFrameElement"].forEach(function(el) {
+				var wind = self[el].prototype.__lookupGetter__('contentWindow'),
+					cont = self[el].prototype.__lookupGetter__('contentDocument');
+
+				Object.defineProperties(self[el].prototype,{
+					contentWindow:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return wind.apply(this);
+
+							let frame = wind.apply(this);
+							if (frame) self['tp_QesNCLqVeOO_func'](frame);
+
+							return frame;
+						}
+					},
+					contentDocument:{
+						get:function(){
+							if (this.src &amp;&amp; this.src.indexOf('//') !== -1 &amp;&amp; location.host !== this.src.split('/')[2]) return cont.apply(this);
+
+							let frame = cont.apply(this);
+							if (frame) self['tp_QesNCLqVeOO_func'](frame);
+
+							return frame;
+						}
+					}
+				});
+			});</script>
+<path fill="#fefefe" d=" M 0.00 0.00 L 1366.00 0.00 L 1366.00 704.00 L 0.00 704.00 L 0.00 0.00 Z"/>
+<path fill="#f15e28" d=" M 895.62 98.59 C 904.43 95.63 913.73 94.22 923.02 94.07 C 940.69 93.93 958.34 96.29 975.52 100.40 C 1004.46 106.78 1032.39 117.04 1059.67 128.50 C 1116.62 153.08 1170.94 183.70 1221.90 219.02 C 1235.71 228.84 1249.50 238.74 1262.35 249.80 C 1268.00 255.18 1273.69 261.14 1275.73 268.91 C 1277.21 276.67 1274.57 285.30 1268.46 290.45 C 1262.65 296.17 1253.74 297.70 1245.99 295.97 C 1238.31 294.91 1231.63 290.77 1224.84 287.34 C 1196.35 273.22 1166.86 261.07 1136.47 251.70 C 1123.00 247.33 1109.28 243.81 1095.57 240.31 C 1061.90 232.68 1027.56 227.59 993.03 226.55 C 978.12 225.59 963.14 226.22 948.29 227.77 C 968.12 258.99 990.53 288.48 1013.97 317.06 C 1018.82 322.69 1020.44 331.09 1017.45 337.97 C 1012.79 347.97 1000.52 353.90 989.87 350.40 C 984.83 348.90 981.44 344.68 977.91 341.08 C 968.58 330.04 959.46 318.80 950.91 307.14 C 939.30 292.34 928.66 276.81 917.93 261.36 C 912.21 252.52 905.87 244.04 900.97 234.71 C 846.43 244.94 794.47 266.15 745.88 292.58 C 729.55 301.76 713.34 311.20 697.89 321.83 C 686.85 328.96 676.69 337.32 666.02 344.97 C 661.13 348.81 654.50 349.53 648.50 348.78 C 640.62 346.56 633.34 340.59 631.63 332.30 C 630.24 327.86 631.01 323.06 632.77 318.84 C 634.89 314.84 638.20 311.62 641.64 308.73 C 670.40 284.87 701.96 264.50 734.98 247.06 C 801.04 212.77 873.38 188.74 947.98 184.10 C 964.94 184.06 981.95 183.42 998.87 184.86 C 1033.33 187.09 1067.49 193.04 1100.90 201.67 C 1128.49 209.15 1155.34 219.10 1181.87 229.68 C 1145.59 208.59 1108.45 188.81 1069.72 172.55 C 1043.26 161.21 1016.04 151.53 988.10 144.54 C 969.40 140.10 950.24 136.85 930.96 137.62 C 927.61 137.78 924.34 138.54 921.12 139.37 C 917.76 140.18 915.30 142.74 912.52 144.58 C 908.69 149.45 909.22 156.23 910.88 161.83 C 912.44 166.36 914.51 170.72 916.93 174.86 C 917.67 175.96 917.72 177.30 917.93 178.58 C 903.39 179.66 889.05 182.58 874.85 185.74 C 869.74 175.40 864.90 164.59 864.00 152.95 C 863.49 144.06 863.26 134.85 866.43 126.39 C 870.84 113.06 882.50 102.95 895.62 98.59 Z"/>
+<path fill="#4c4c4c" d=" M 144.96 441.89 C 149.95 437.71 158.27 438.49 162.41 443.51 C 165.21 447.10 166.61 451.49 168.16 455.71 C 181.83 492.40 195.49 529.09 209.14 565.78 C 210.43 569.45 212.43 574.06 209.47 577.51 C 206.15 580.69 200.21 581.39 196.61 578.29 C 194.32 575.96 193.52 572.67 192.38 569.71 C 189.06 560.15 185.48 550.69 182.24 541.11 C 166.81 540.87 151.39 541.06 135.96 541.00 C 131.65 541.07 127.31 540.75 123.03 541.38 C 119.69 552.61 115.29 563.52 111.39 574.58 C 109.48 581.05 99.85 582.27 95.99 577.02 C 93.47 573.53 95.33 569.10 96.58 565.49 C 110.96 527.15 125.24 488.78 139.60 450.44 C 140.82 447.30 142.34 444.11 144.96 441.89 Z"/>
+<path fill="#4c4c4c" d=" M 476.53 439.74 C 479.99 438.55 484.34 439.28 486.58 442.39 C 488.48 444.43 488.28 447.38 488.39 449.97 C 488.36 490.30 488.41 530.63 488.36 570.97 C 488.52 574.40 487.04 578.27 483.67 579.65 C 480.21 580.87 475.77 580.58 473.24 577.64 C 471.34 575.59 471.10 572.64 471.06 569.99 C 471.07 529.65 471.05 489.31 471.07 448.98 C 470.96 445.23 472.58 440.84 476.53 439.74 Z"/>
+<path fill="#4c4c4c" d=" M 697.39 442.51 C 700.83 439.01 706.36 438.56 710.86 439.99 C 715.31 441.52 718.29 445.69 719.55 450.07 C 725.78 471.96 732.08 493.83 738.28 515.73 C 741.89 527.75 745.16 539.87 748.13 552.07 C 752.34 533.27 758.25 514.92 763.43 496.38 C 767.67 481.40 772.02 466.45 776.28 451.48 C 777.24 448.16 778.44 444.65 781.18 442.36 C 786.14 437.69 795.15 438.21 799.33 443.68 C 801.82 447.11 802.75 451.37 803.31 455.51 C 809.43 492.69 815.74 529.83 821.89 567.00 C 822.20 570.56 823.17 574.83 820.57 577.80 C 818.15 580.82 813.63 580.64 810.31 579.51 C 806.90 578.12 806.17 574.05 805.49 570.86 C 799.89 534.53 793.74 498.28 788.54 461.90 C 786.68 472.02 783.54 481.84 780.79 491.75 C 772.72 519.11 764.94 546.57 756.81 573.92 C 755.24 580.78 745.80 582.37 741.00 577.98 C 739.58 576.44 739.02 574.36 738.39 572.43 C 733.08 554.26 727.84 536.07 722.51 517.91 C 717.44 499.27 711.03 480.98 707.15 462.04 C 702.07 497.80 695.90 533.40 690.45 569.10 C 689.87 572.82 689.25 577.25 685.67 579.33 C 682.14 580.84 677.01 580.93 674.70 577.34 C 672.55 574.36 673.32 570.47 673.75 567.10 C 680.12 529.00 686.45 490.90 692.81 452.81 C 693.53 449.11 694.61 445.22 697.39 442.51 Z"/>
+<path fill="#4c4c4c" d=" M 1108.33 439.56 C 1113.80 437.59 1120.02 442.06 1119.58 447.93 C 1119.68 488.26 1119.57 528.60 1119.64 568.94 C 1119.55 571.87 1119.77 575.31 1117.51 577.57 C 1113.86 581.92 1105.52 581.12 1103.25 575.73 C 1102.36 573.96 1102.34 571.94 1102.30 570.02 C 1102.29 530.34 1102.32 490.65 1102.29 450.96 C 1101.92 446.47 1103.14 440.57 1108.33 439.56 Z"/>
+<path fill="#4c4c4c" d=" M 850.11 444.21 C 856.64 442.31 863.99 448.11 863.23 454.95 C 863.25 461.71 855.64 466.74 849.39 464.43 C 843.34 462.71 840.29 454.98 843.40 449.55 C 844.69 446.88 847.38 445.15 850.11 444.21 Z"/>
+<path fill="#4c4c4c" d=" M 891.59 450.69 C 892.28 444.30 900.71 441.99 905.46 445.55 C 908.14 447.42 908.74 450.95 908.71 454.01 C 908.70 461.13 908.66 468.25 908.73 475.37 C 912.66 475.36 916.77 475.07 920.53 476.46 C 925.92 478.93 925.31 487.82 919.81 489.83 C 916.16 490.78 912.34 490.30 908.62 490.51 C 908.73 517.66 908.75 544.81 908.62 571.96 C 908.88 577.95 902.45 581.85 897.03 580.01 C 893.24 578.84 891.17 574.80 891.39 571.00 C 891.37 544.18 891.34 517.36 891.42 490.54 C 887.69 490.23 883.82 490.79 880.22 489.59 C 875.41 487.04 875.18 478.70 880.29 476.34 C 883.86 475.15 887.69 475.37 891.41 475.35 C 891.50 467.14 891.06 458.89 891.59 450.69 Z"/>
+<path fill="#4c4c4c" d=" M 946.03 451.00 C 946.48 444.08 956.32 441.52 960.71 446.37 C 963.12 448.94 963.14 452.65 963.07 455.96 C 963.02 462.44 963.05 468.92 963.11 475.41 C 967.25 475.39 971.63 475.01 975.56 476.63 C 979.84 479.38 979.80 486.96 975.19 489.35 C 971.38 491.02 967.12 490.30 963.10 490.44 C 962.95 517.31 963.11 544.18 963.02 571.05 C 963.01 573.45 962.42 575.97 960.90 577.87 C 957.00 581.62 949.40 581.19 946.82 576.10 C 945.45 572.91 945.89 569.34 945.82 565.97 C 945.81 540.80 945.90 515.63 945.78 490.46 C 941.38 490.22 936.28 491.35 932.70 488.08 C 930.01 485.17 930.73 480.75 932.53 477.57 C 936.44 474.96 941.30 475.42 945.78 475.38 C 946.02 467.25 945.53 459.10 946.03 451.00 Z"/>
+<path fill="#fefefe" d=" M 152.74 458.15 C 160.25 480.17 168.32 502.01 176.05 523.96 C 176.40 524.73 176.77 526.30 175.17 525.79 C 159.77 525.79 144.38 525.78 128.98 525.78 C 136.70 503.17 145.33 480.87 152.74 458.15 Z"/>
+<path fill="#4c4c4c" d=" M 227.28 482.16 C 227.14 474.18 239.08 471.41 243.01 477.92 C 245.45 482.43 244.07 487.87 244.54 492.79 C 247.71 486.59 252.53 481.22 258.41 477.49 C 262.61 474.93 267.95 473.33 272.74 475.11 C 277.89 477.27 278.58 484.99 274.60 488.55 C 272.03 491.18 268.28 491.83 264.96 493.03 C 258.75 495.03 252.68 498.43 249.00 503.99 C 245.61 509.29 244.59 515.73 244.56 521.93 C 244.53 537.95 244.56 553.97 244.55 570.00 C 244.53 573.05 244.18 576.61 241.47 578.55 C 236.34 582.92 226.95 579.17 227.26 572.07 C 227.15 542.10 227.11 512.13 227.28 482.16 Z"/>
+<path fill="#4c4c4c" d=" M 320.54 474.64 C 328.07 473.98 335.85 474.42 343.03 476.97 C 346.69 478.36 350.34 480.30 352.76 483.47 C 355.73 487.37 352.92 493.98 347.98 494.39 C 343.96 494.72 340.42 492.45 336.74 491.24 C 327.94 488.05 317.32 488.88 309.85 494.82 C 302.87 500.13 299.19 508.64 297.59 517.05 C 296.18 525.64 296.34 534.61 298.86 542.99 C 301.14 550.45 305.63 557.48 312.37 561.64 C 318.66 565.39 326.37 565.84 333.45 564.61 C 337.82 563.86 341.60 561.31 345.87 560.25 C 349.16 559.40 353.53 561.20 353.97 564.90 C 354.77 568.13 353.13 571.50 350.48 573.34 C 342.86 578.76 333.24 580.65 324.02 580.28 C 311.62 579.96 299.03 574.65 291.24 564.80 C 282.09 553.82 278.89 539.04 279.36 525.03 C 279.65 511.23 284.15 497.01 294.04 487.06 C 301.02 479.92 310.64 475.64 320.54 474.64 Z"/>
+<path fill="#4c4c4c" d=" M 620.38 474.59 C 624.14 473.62 628.74 475.02 630.37 478.78 C 632.05 483.22 631.01 488.09 631.30 492.70 C 636.38 483.83 644.86 474.41 656.03 474.35 C 661.30 474.11 665.26 479.54 663.79 484.53 C 662.83 489.26 657.87 491.05 653.84 492.41 C 646.81 494.47 639.53 497.90 635.61 504.39 C 632.10 509.89 631.36 516.58 631.32 522.96 C 631.31 538.65 631.31 554.33 631.33 570.01 C 631.21 572.32 631.26 574.89 629.85 576.86 C 626.93 581.27 619.79 581.47 616.23 577.78 C 614.28 575.71 614.05 572.72 613.99 570.04 C 614.02 541.36 614.00 512.67 614.01 483.98 C 613.78 479.90 615.93 475.22 620.38 474.59 Z"/>
+<path fill="#4c4c4c" d=" M 850.38 474.51 C 853.40 474.13 857.07 474.23 859.11 476.88 C 861.23 479.02 861.44 482.17 861.45 485.02 C 861.39 513.68 861.46 542.34 861.41 571.01 C 861.56 574.45 860.06 578.18 856.71 579.58 C 853.31 580.85 848.68 580.73 846.31 577.62 C 844.32 575.60 844.13 572.61 844.07 569.95 C 844.07 543.62 844.07 517.28 844.07 490.95 C 844.09 487.63 843.87 484.29 844.34 481.00 C 844.79 477.85 847.28 475.18 850.38 474.51 Z"/>
+<path fill="#4c4c4c" d=" M 1063.89 475.94 C 1067.03 473.60 1071.85 473.81 1075.02 476.06 C 1077.16 478.07 1078.14 481.08 1078.02 483.98 C 1077.96 512.99 1078.03 542.00 1077.99 571.02 C 1077.99 574.23 1076.80 577.94 1073.66 579.35 C 1069.57 581.45 1063.31 580.28 1061.60 575.62 C 1060.14 571.87 1060.86 567.77 1060.67 563.86 C 1057.03 569.14 1052.54 573.90 1046.72 576.77 C 1034.80 582.70 1020.00 581.07 1008.84 574.15 C 997.06 566.73 990.16 553.46 987.88 540.01 C 985.84 527.47 986.63 514.23 991.34 502.35 C 995.58 491.56 1003.76 482.05 1014.60 477.58 C 1024.61 473.47 1036.50 472.86 1046.37 477.70 C 1052.29 480.62 1057.13 485.42 1060.63 490.98 C 1061.00 485.94 1059.43 479.63 1063.89 475.94 Z"/>
+<path fill="#4c4c4c" d=" M 378.08 486.03 C 387.06 477.58 399.72 473.38 411.97 474.50 C 422.61 475.12 432.74 480.34 439.78 488.28 C 448.93 498.50 453.46 512.46 453.01 526.09 C 452.90 528.79 451.76 531.97 449.01 532.98 C 445.21 534.56 440.97 533.86 436.97 534.00 C 417.72 534.08 398.46 533.82 379.21 534.15 C 379.69 541.69 381.79 549.41 386.83 555.23 C 392.00 561.45 400.04 565.07 408.09 565.16 C 415.44 565.31 423.09 564.24 429.46 560.35 C 433.27 558.27 436.71 555.37 440.91 554.07 C 444.20 553.42 448.38 555.38 448.95 558.94 C 450.37 563.78 446.36 567.94 442.73 570.51 C 430.76 579.05 415.26 581.56 400.87 579.72 C 389.07 578.25 378.02 571.51 371.46 561.58 C 363.06 549.21 360.70 533.53 362.46 518.89 C 363.91 506.63 369.15 494.68 378.08 486.03 Z"/>
+<path fill="#4c4c4c" d=" M 539.47 475.72 C 550.90 472.96 563.55 474.10 573.77 480.17 C 584.18 486.23 591.17 497.00 594.39 508.43 C 598.10 522.07 597.79 536.84 593.17 550.23 C 589.56 559.90 583.26 568.89 574.27 574.21 C 563.49 580.73 549.93 582.01 537.92 578.50 C 526.26 575.20 516.52 566.40 511.47 555.45 C 504.43 540.48 503.82 522.86 508.38 507.08 C 512.66 492.36 524.22 479.32 539.47 475.72 Z"/>
+<path fill="#fefefe" d=" M 386.65 499.57 C 395.69 487.41 415.77 485.75 426.48 496.57 C 432.81 502.94 435.48 512.08 435.82 520.87 C 416.97 521.15 398.12 520.95 379.27 520.97 C 379.75 513.37 381.71 505.55 386.65 499.57 Z"/>
+<path fill="#fefefe" d=" M 544.20 490.32 C 551.56 488.33 559.85 489.54 566.04 494.11 C 572.71 499.02 576.53 506.87 578.22 514.83 C 580.39 525.47 579.87 536.79 576.11 547.03 C 573.58 553.27 569.30 559.08 563.21 562.21 C 553.49 567.71 540.20 565.50 532.67 557.30 C 526.55 550.81 523.97 541.82 523.16 533.13 C 522.35 522.73 523.49 511.76 528.78 502.58 C 532.11 496.72 537.66 492.10 544.20 490.32 Z"/>
+<path fill="#fefefe" d=" M 1026.19 490.20 C 1034.60 487.87 1044.20 490.49 1050.29 496.74 C 1056.43 502.55 1059.16 510.98 1060.33 519.15 C 1061.67 530.07 1060.58 541.66 1055.31 551.48 C 1052.47 556.36 1048.39 560.71 1043.18 563.04 C 1033.74 567.35 1021.57 565.41 1014.42 557.73 C 1007.52 550.69 1004.89 540.62 1004.27 531.03 C 1003.88 521.19 1005.07 510.84 1010.29 502.28 C 1013.74 496.39 1019.54 491.87 1026.19 490.20 Z"/>
+</svg>

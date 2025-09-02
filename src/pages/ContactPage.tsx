@@ -7,8 +7,7 @@ export const ContactPage = () => {
     <div className="flex flex-col items-center gap-10 py-10 px-4 text-center min-h-screen pt-20">
       {/*upper*/}
       <div className="w-full max-w-7xl mb-12">
-        <SimpleCard header="Skontaktuj się z nami!" text="Jesteście zainteresowani dołączeniem do naszego koła?
-Zapraszamy!" />
+        <SimpleCard header="Skontaktuj się z nami!" text="Masz pytania, pomysł na współpracę lub chcesz do nas dołączyć? Skontaktuj się z nami – napisz do nas lub znajdź nas w mediach społecznościowych:" />
       </div>
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-12 mb-12">
         <SimpleCard header="E-mail" text="hyperspec@agh.edu.pl" /> 
