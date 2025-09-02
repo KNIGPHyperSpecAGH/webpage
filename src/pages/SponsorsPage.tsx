@@ -2,6 +2,9 @@ import {NavButton} from "../components/NavButton";
 import {SimpleCard} from "../components/SimpleCard";
 import ArcerolMittal from "../assets/ArcelorMittal.svg";
 
+const naCo = `Zebrane środki przeznaczamy przede wszystkim na zakup specjalistycznego sprzętu pomiarowego, oprogramowania oraz realizację naszych badań i projektów. Dzięki temu możemy rozwijać kompetencje praktyczne, prowadzić ambitne inicjatywy naukowe i brać udział w wydarzeniach branżowych.`
+const zostan = `Zapraszamy do współpracy wszystkich, którzy chcieliby wesprzeć młodych pasjonatów teledetekcji i fotogrametrii. Zostań naszym sponsorem i pomóż nam tworzyć innowacyjne rozwiązania oraz znajdować nowe, kreatywne zastosowania dla sprawdzonych technologii.`
+
 type Sponsor = {
     name: string;
     logoUrl?: string;
@@ -68,11 +71,11 @@ export const SponsorsPage = () => (
             className="w-full max-w-7xl flex flex-col items-center text-center gap-5 mb-3 md:flex-row md:items-stretch md:text-left">
             <SimpleCard
                 header="Na co zbieramy pieniądze ?"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+                text={naCo}
             />
             <SimpleCard
                 header="Zostań naszym sponsorem"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+                text={zostan}
             >
                 <NavButton href="/kontakt">Zostań sponsorem!</NavButton>
             </SimpleCard>

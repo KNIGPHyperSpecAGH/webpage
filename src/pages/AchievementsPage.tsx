@@ -2,6 +2,11 @@ import {useState} from "react";
 import {NavButton} from "../components/NavButton";
 import {SimpleCard} from "../components/SimpleCard";
 import here from "../assets/HERE_logo.svg";
+
+const here_hackaton = `Brałem udział w hackathonie organizowanym przez INNO AGH oraz firmę HERE – jednego z liderów branży geoinformatycznej. Była to świetna okazja, żeby zmierzyć się z realnym problemem opartym na prawdziwych danych. Naszym zadaniem było podzielenie zapisów GPS z ciężarówek na osobne dostawy, które faktycznie realizowały. To doświadczenie pokazało mi, że dane wcale nie są zawsze przejrzyste – często pojawiają się w nich dziwne, trudne do wytłumaczenia obserwacje. Wygrana w hackathonie dała mi możliwość odbycia stażu w HERE. Dzięki temu zobaczyłem z bliska, jak wygląda przetwarzanie danych w komercyjnym środowisku – ile procesów i narzędzi musi działać w tle, żeby całość była skuteczna i niezawodna. Podczas stażu uczestniczyłem w codziennych spotkaniach zespołu, co pozwoliło mi rozwinąć umiejętności komunikacji w międzynarodowym środowisku programistyczno-biznesowym. Miałem też okazję poznać nowoczesne narzędzia i dobre praktyki pracy z danymi, których na uczelni zazwyczaj się nie uczy – od kontroli jakości danych po automatyzację procesów i współpracę w dużych projektach. ~ Błażej Kiełkowski`
+
+
+
 type Achievement = {
     title: string;
     date: string;
@@ -16,7 +21,7 @@ const achievements: Achievement[] = [
         title: "Wygrana",
         date: "13.06.2025",
         description: "Nasze pierwsze, pierwsze miejsce!",
-        details: "S",
+        details: here_hackaton,
         place: 1,
         imageUrl: here
     },

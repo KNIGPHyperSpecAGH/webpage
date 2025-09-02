@@ -47,13 +47,13 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 <img
                     src={image}
                     alt={imageAlt}
-                    className="w-full h-44 md:h-full object-cover"
+                    className="w-full h-44 md:h-full object-cover rounded-2xl"
                 />
 
                 {date && (
                     <div
                         className={`absolute flex flex-col items-center justify-center
-                          w-24 h-24 bg-accent text-white rounded-3xl shadow-md
+                          w-24 h-24 bg-accent text-white rounded-3xl shadow-md p-5
                           ${isRight ? "bottom-4 right-4" : "bottom-4 left-4"}`}
                     >
                         <span className="text-2xl font-bold">{day}</span>

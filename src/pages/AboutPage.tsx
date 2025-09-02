@@ -39,10 +39,7 @@ export const AboutPage = () => {
       {/* Section: About */}
       <div className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-3xl">
         <p className="text-white text-2xl leading-relaxed lg:w-1/2 text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Nobis quia corporis
-          recusandae. Impedit error tempore quod nemo quia tempora iste amet
-          enim, non, nesciunt, ullam ipsum quo vero saepe. Nisi.
+          Jesteśmy kołem naukowym działającym przy Wydziale Geodezji Górniczej i Inżynierii Środowiska w Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. Zajmujemy się rozwijaniem i popularyzacją technik teledetekcyjnych oraz przetwarzania danych przestrzennych. Naszym celem jest poszerzanie wiedzy, realizacja projektów naukowych oraz integracja studentów zainteresowanych nowoczesnymi technologiami geoinformatycznymi.
         </p>
         <img
           src={groupPhoto}
