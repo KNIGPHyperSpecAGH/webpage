@@ -13,15 +13,15 @@ export const ProjectsPage = () => {
                 <ProjectCard
                     title="Współpraca z Acerol Mittal"
                     description={acerol}
-                    image="/ArcelorMittal.svg"
+                    image="ArcelorMittal.svg"
                     variant="left"
-                    startDate="01 Października 2025"
+                    startDate="01 Październik 2025"
                 />
 
                 <ProjectCard
                     title="Modelowanie ruchu wydm"
                     description={leba}
-                    image="/leba.jpg"
+                    image="leba.jpg"
                     variant="right"
                     startDate="15 Lipca 2025"
                 />
