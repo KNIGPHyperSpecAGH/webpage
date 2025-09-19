@@ -66,10 +66,10 @@ const SponsorSection = () => (
 );
 
 export const SponsorsPage = () => (
-    <div className=" bg-background flex flex-col items-center py-5 text-white px-4">
+    <div className=" min-h-screen bg-background flex flex-col items-center py-5 text-white px-4">
         <SponsorSection/>
         <div
-            className="w-full max-w-7xl flex flex-col items-center text-center gap-15 my-10 pb-5 md:flex-row md:items-stretch md:text-left">
+            className="w-full max-w-7xl flex flex-col items-center text-center gap-15 mt-10 pb-5 md:flex-row md:items-stretch md:text-left">
             <SimpleCard
                 header="Na co zbieramy pieniądze ?"
                 text={naCo}
