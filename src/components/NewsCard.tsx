@@ -63,7 +63,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 )}
             </div>
 
-            <div className="flex-1 flex flex-col justify-between p-4 md:p-6 text-center md:text-left">
+            <div className="flex-1 flex flex-col justify-between p-4 md:p-6 text-left">
                 <div>
                     <h3 className="text-4xl font-text font-bold mb-5 text-white">
                         {title}
@@ -74,7 +74,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 </div>
 
                 {ctaLabel && (
-                    <div className="mt-4 flex w-full md:w-auto justify-center md:justify-start">
+                    <div className={`mt-4 flex w-full md:w-auto justify-center ${isRight ? "md:justify-end" : "md:justify-start"}`}>
                         {ctaHref ? (
                             <NavButton href={ctaHref}>{ctaLabel}</NavButton>
                         ) : (

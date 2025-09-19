@@ -38,7 +38,7 @@ export const AboutPage = () => {
     <div className="min-h-screen flex flex-col items-center px-4 py-8 pt-20">
       {/* Section: About */}
       <div className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-3xl">
-        <p className="text-white text-2xl leading-relaxed lg:w-1/2 text-center">
+        <p className="text-white text-2xl  lg:w-1/2 text-justify hyphens-auto p-4" lang="pl">
           Jesteśmy kołem naukowym działającym przy Wydziale Geodezji Górniczej i Inżynierii Środowiska w Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. Zajmujemy się rozwijaniem i popularyzacją technik teledetekcyjnych oraz przetwarzania danych przestrzennych. Naszym celem jest poszerzanie wiedzy, realizacja projektów naukowych oraz integracja studentów zainteresowanych nowoczesnymi technologiami geoinformatycznymi.
         </p>
         <img
@@ -61,17 +61,17 @@ export const AboutPage = () => {
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
             <ManagementCard
               name="Piotr Starzyk"
-              role="Przewodniczący koła"
+              role="Przewodniczący"
               imie={piotr}
             />
             <ManagementCard
               name="Błażej Kiełkowski"
-              role="Wiceprzewodniczący koła"
+              role="Wiceprzewodniczący ds. finansów i zasobów ludzkich"
               imie={blazej}
             />
             <ManagementCard
               name="Natalia Stec"
-              role="Wiceprzewodnicząca koła"
+              role="Wiceprzewodnicząca ds. promocji i rozwoju"
               imie={natalia}
             />
             <ManagementCard
