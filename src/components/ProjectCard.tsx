@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             }`}
         >
             <div
-                className="p-4 md:p-6 flex-1 flex flex-col justify-between items-center md:items-start text-center md:text-left">
+                className="p-4 md:p-6 flex-1 flex flex-col justify-between items-center md:items-start text-left">
                 <div>
                     <h3 className="text-4xl font-text font-bold mb-2 text-white">
                         {title}
