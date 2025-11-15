@@ -1,5 +1,6 @@
 import {createHashRouter, RouterProvider} from "react-router";
 import {RootLayout} from "./components/RootLayout.tsx";
+import {EmptyLayout} from "./components/EmptyLayout.tsx";
 import {MainPage} from "./pages/MainPage.tsx";
 import {ProjectsPage} from "./pages/ProjectsPage.tsx";
 import {NewsPage} from "./pages/NewsPage.tsx";
@@ -8,6 +9,7 @@ import {AchievementsPage} from "./pages/AchievementsPage.tsx";
 import {ContactPage} from "./pages/ContactPage.tsx";
 import {SponsorsPage} from "./pages/SponsorsPage.tsx";
 import {ErrorPage} from "./pages/ErrorPage.tsx";
+import {MapPage} from "./pages/MapPage.tsx";
 
 
 const router = createHashRouter([
@@ -26,6 +28,14 @@ const router = createHashRouter([
         ],
         errorElement: <ErrorPage/>,
     },
+        {
+        path: "/",
+        element: <EmptyLayout />,
+        children: [
+            { path: "mapa", element: <MapPage/> },  
+            // add more minimal pages here
+        ]
+    }
 ]);
 
 function App() {
