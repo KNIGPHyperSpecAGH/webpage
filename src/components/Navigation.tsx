@@ -10,7 +10,7 @@ const navigationLinks = [
     {path: "o-nas", label: "O nas"},
     {path: "osiagniecia", label: "Osiągnięcia"},
     {path: "kontakt", label: "Kontakt"},
-    {path: "sponsorzy", label: "Sponsorzy"},
+    //{path: "sponsorzy", label: "Sponsorzy"},
 ];
 
 interface NavigationProps {
