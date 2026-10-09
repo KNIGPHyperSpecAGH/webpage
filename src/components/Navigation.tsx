@@ -4,7 +4,11 @@ import {MenuButton} from "./MenuButton.tsx";
 import {Socials} from "./Socials.tsx";
 import logo from "../assets/logo.png";
 
-const navigationLinks = [
+type NavigationLink = {
+    path: string, label: string
+};
+
+const navigationLinks: NavigationLink[] = [
     {path: "aktualnosci", label: "Aktualności"},
     {path: "spotkania", label: "Spotkania"},
     {path: "projekty", label: "Projekty"},
