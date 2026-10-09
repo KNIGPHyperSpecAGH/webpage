@@ -9,6 +9,7 @@ import {AchievementsPage} from "./pages/AchievementsPage.tsx";
 import {ContactPage} from "./pages/ContactPage.tsx";
 import {ErrorPage} from "./pages/ErrorPage.tsx";
 import {MapPage} from "./pages/MapPage.tsx";
+import {Meetings} from "./pages/Meetings.tsx";
 
 
 const router = createHashRouter([
@@ -17,6 +18,7 @@ const router = createHashRouter([
         element: <RootLayout/>,
         children: [
             {index: true, element: <MainPage/>},
+            {path: "spotkania", element: <Meetings/>},
             {path: "projekty", element: <ProjectsPage/>},
             {path: "aktualnosci", element: <NewsPage/>},
             {path: "o-nas", element: <AboutPage/>},

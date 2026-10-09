@@ -1,11 +1,12 @@
 import {useState} from "react";
 import {NavLink} from "react-router";
-import {MenuButton} from "./MenuButton.tsx"; // Import your Button
+import {MenuButton} from "./MenuButton.tsx";
 import {Socials} from "./Socials.tsx";
 import logo from "../assets/logo.png";
 
 const navigationLinks = [
     {path: "aktualnosci", label: "Aktualności"},
+    {path: "spotkania", label: "Spotkania"},
     {path: "projekty", label: "Projekty"},
     {path: "o-nas", label: "O nas"},
     {path: "osiagniecia", label: "Osiągnięcia"},
