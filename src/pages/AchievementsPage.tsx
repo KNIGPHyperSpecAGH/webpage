@@ -6,7 +6,6 @@ import here from "../assets/HERE_logo.svg";
 const here_hackaton = `Brałem udział w hackathonie organizowanym przez INNO AGH oraz firmę HERE – jednego z liderów branży geoinformatycznej. Była to świetna okazja, żeby zmierzyć się z realnym problemem opartym na prawdziwych danych. Naszym zadaniem było podzielenie zapisów GPS z ciężarówek na osobne dostawy, które faktycznie realizowały. To doświadczenie pokazało mi, że dane wcale nie są zawsze przejrzyste – często pojawiają się w nich dziwne, trudne do wytłumaczenia obserwacje. Wygrana w hackathonie dała mi możliwość odbycia stażu w HERE. Dzięki temu zobaczyłem z bliska, jak wygląda przetwarzanie danych w komercyjnym środowisku – ile procesów i narzędzi musi działać w tle, żeby całość była skuteczna i niezawodna. Podczas stażu uczestniczyłem w codziennych spotkaniach zespołu, co pozwoliło mi rozwinąć umiejętności komunikacji w międzynarodowym środowisku programistyczno-biznesowym. Miałem też okazję poznać nowoczesne narzędzia i dobre praktyki pracy z danymi, których na uczelni zazwyczaj się nie uczy – od kontroli jakości danych po automatyzację procesów i współpracę w dużych projektach. ~ Błażej Kiełkowski`
 
 
-
 type Achievement = {
     title: string;
     date: string;
@@ -140,8 +139,8 @@ export const AchievementsPage = () => (
     <div className="min-h-screen bg-background flex flex-col items-center py-10 px-4 text-white text-center pt-20">
         <AchievementSection/>
         <div className="w-full max-w-7xl px-0 mt-20 flex justify-center">
-            <SimpleCard header="Co dalej?"
-                        text="Dołącz do nas! Szukamy nowych osób do sekcji informatyki oraz teledetekcji ">
+            <SimpleCard header="Co dalej?">
+                Dołącz do nas! Szukamy nowych osób do sekcji informatyki oraz teledetekcji<br/>
                 <NavButton href="/kontakt">Dołącz teraz</NavButton>
             </SimpleCard>
         </div>

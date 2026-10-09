@@ -31,7 +31,7 @@ const SponsorCard = ({sponsor}: { sponsor: Sponsor }) => (
             <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
                 <div className={cardImageBase}>
                     <div className="h-full bg-[#FEFEFE] flex items-center justify-center">
-                        <img src={arcelorMittal} alt="ArcelorMittal" className="max-h-full object-contain" />
+                        <img src={arcelorMittal} alt="ArcelorMittal" className="max-h-full object-contain"/>
                     </div>
                 </div>
             </a>
@@ -70,14 +70,9 @@ export const SponsorsPage = () => (
         <SponsorSection/>
         <div
             className="w-full max-w-7xl flex flex-col items-center text-center gap-15 mt-10 pb-5 md:flex-row md:items-stretch md:text-left">
-            <SimpleCard
-                header="Na co zbieramy pieniądze ?"
-                text={naCo}
-            />
-            <SimpleCard
-                header="Zostań naszym sponsorem"
-                text={zostan}
-            >
+            <SimpleCard header="Na co zbieramy pieniądze ?">{naCo}</SimpleCard>
+            <SimpleCard header="Zostań naszym sponsorem">
+                {zostan}<br/>
                 <NavButton href="/kontakt">Zostań sponsorem!</NavButton>
             </SimpleCard>
         </div>
