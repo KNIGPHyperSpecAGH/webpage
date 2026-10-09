@@ -1,6 +1,6 @@
 import {NavButton} from "../components/NavButton";
 import {SimpleCard} from "../components/SimpleCard";
-import ArcerolMittal from "../assets/ArcelorMittal.svg";
+import arcelorMittal from "../assets/ArcelorMittal.svg";
 
 const naCo = `Zebrane środki przeznaczamy przede wszystkim na zakup specjalistycznego sprzętu pomiarowego, oprogramowania oraz realizację naszych badań i projektów. Dzięki temu możemy rozwijać kompetencje praktyczne, prowadzić ambitne inicjatywy naukowe i brać udział w wydarzeniach branżowych.`
 const zostan = `Zapraszamy do współpracy wszystkich, którzy chcieliby wesprzeć młodych pasjonatów teledetekcji i fotogrametrii. Zostań naszym sponsorem i pomóż nam tworzyć innowacyjne rozwiązania oraz znajdować nowe, kreatywne zastosowania dla sprawdzonych technologii.`
@@ -12,7 +12,7 @@ type Sponsor = {
 };
 
 const sponsors: Sponsor[] = [
-    {name: "ArcelorMittal", logoUrl: ArcerolMittal, url: "https://poland.arcelormittal.com/"},
+    {name: "ArcelorMittal", logoUrl: arcelorMittal, url: "https://poland.arcelormittal.com/"},
 ];
 
 const cardBase = "relative flex flex-col bg-element rounded-[3vw] shadow-md overflow-hidden";
@@ -31,7 +31,7 @@ const SponsorCard = ({sponsor}: { sponsor: Sponsor }) => (
             <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
                 <div className={cardImageBase}>
                     <div className="h-full bg-[#FEFEFE] flex items-center justify-center">
-                        <img src={ArcerolMittal} alt="ArcelorMittal" className="max-h-full object-contain" />
+                        <img src={arcelorMittal} alt="ArcelorMittal" className="max-h-full object-contain" />
                     </div>
                 </div>
             </a>

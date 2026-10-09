@@ -9,8 +9,8 @@ type ProjectCardProps = {
     variant?: "left" | "right";
     ctaLabel?: string;
     ctaHref?: string;
-    startDate?: string;
-    endDate?: string;
+    startDate?: Date;
+    endDate?: Date;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -49,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                         Data rozpoczęcia:
                                     </span>
                                     <span className="text-xl font-text text-accent">
-                                        {startDate}
+                                        {startDate.toLocaleDateString("pl-PL", { year: "numeric", month: "long", day: "numeric" })}
                                     </span>
                                 </div>
                             )}
@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                         Data zakończenia:
                                     </span>
                                     <span className="text-xl font-text text-accent">
-                                        {endDate}
+                                        {endDate.toLocaleDateString("pl-PL", { year: "numeric", month: "long", day: "numeric" })}
                                     </span>
                                 </div>
                             )}
