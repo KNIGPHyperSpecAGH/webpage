@@ -11,7 +11,7 @@ const Footer: React.FC = () => (
             </div>
         <div className="flex flex-col w-1/4">
             <h3 className="text-xl font-bold text-footer place-self-start mb-4">Kontakt</h3>
-            <p className="mt-2">e-mail: hyperspec@agh.edu.pl</p>
+            <p className="mt-2">e-mail: <a href="mailto:hyperspec@agh.edu.pl">hyperspec@agh.edu.pl</a></p>
             <p className="mt-2">adres: al. Adama Mickiewicza 30, 30-059 Kraków</p>
         </div>
 

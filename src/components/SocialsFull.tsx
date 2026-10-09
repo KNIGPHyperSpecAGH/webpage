@@ -4,90 +4,90 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 export const SocialsFull = () => (
-  <div className="flex flex-col items-start space-y-4">
-    <a
-      href="https://www.facebook.com/profile.php?id=61577291008686"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Facebook"
-      className="group flex items-center space-x-2"
-      style={{ fontSize: "2rem" }}
-    >
-      <FacebookIcon
-        sx={{
-          fontSize: "inherit",
-          color: "var(--color-white)",
-          transition: "color 0.2s",
-          ".group:hover &": { color: "var(--color-accent)" },
-        }}
-      />
-      <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
+    <div className="flex flex-col items-start space-y-4">
+        <a
+            href="https://www.facebook.com/profile.php?id=61577291008686"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="group flex items-center space-x-2"
+            style={{fontSize: "2rem"}}
+        >
+            <FacebookIcon
+                sx={{
+                    fontSize: "inherit",
+                    color: "var(--color-white)",
+                    transition: "color 0.2s",
+                    ".group:hover &": {color: "var(--color-accent)"},
+                }}
+            />
+            <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
         KNIGP HyperSpec AGH
       </span>
-    </a>
+        </a>
 
-    <a
-      href="https://www.instagram.com/knigp_hyperspec/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-      className="group flex items-center space-x-2"
-      style={{ fontSize: "2rem" }}
-    >
-      <InstagramIcon
-        sx={{
-          fontSize: "inherit",
-          color: "var(--color-white)",
-          transition: "color 0.2s",
-          ".group:hover &": { color: "var(--color-accent)" },
-        }}
-      />
-      <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
+        <a
+            href="https://www.instagram.com/knigp_hyperspec/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="group flex items-center space-x-2"
+            style={{fontSize: "2rem"}}
+        >
+            <InstagramIcon
+                sx={{
+                    fontSize: "inherit",
+                    color: "var(--color-white)",
+                    transition: "color 0.2s",
+                    ".group:hover &": {color: "var(--color-accent)"},
+                }}
+            />
+            <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
         @knigp_hyperspec
       </span>
-    </a>
+        </a>
 
-    <a
-      href="https://www.linkedin.com/company/hyperspec"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="LinkedIn"
-      className="group flex items-center space-x-2"
-      style={{ fontSize: "2rem" }}
-    >
-      <LinkedInIcon
-        sx={{
-          fontSize: "inherit",
-          color: "var(--color-white)",
-          transition: "color 0.2s",
-          ".group:hover &": { color: "var(--color-accent)" },
-        }}
-      />
-      <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
+        <a
+            href="https://www.linkedin.com/company/hyperspec"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="group flex items-center space-x-2"
+            style={{fontSize: "2rem"}}
+        >
+            <LinkedInIcon
+                sx={{
+                    fontSize: "inherit",
+                    color: "var(--color-white)",
+                    transition: "color 0.2s",
+                    ".group:hover &": {color: "var(--color-accent)"},
+                }}
+            />
+            <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
     HyperSpec
       </span>
-    </a>
-    <a
-      href="https://github.com/KNIGPHyperSpecAGH/webpage"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="GitHub"
-      className="group flex items-center space-x-2"
-      style={{ fontSize: "2rem" }}
-    >
-      <GitHubIcon
-        sx={{
-          fontSize: "inherit",
-          color: "var(--color-white)",
-          transition: "color 0.2s",
-          ".group:hover &": { color: "var(--color-accent)" },
-        }}
-        className="transition-colors"
-      />
-      <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
+        </a>
+        <a
+            href="https://github.com/KNIGPHyperSpecAGH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="group flex items-center space-x-2"
+            style={{fontSize: "2rem"}}
+        >
+            <GitHubIcon
+                sx={{
+                    fontSize: "inherit",
+                    color: "var(--color-white)",
+                    transition: "color 0.2s",
+                    ".group:hover &": {color: "var(--color-accent)"},
+                }}
+                className="transition-colors"
+            />
+            <span className="text-white text-lg group-hover:text-[var(--color-accent)] transition-colors">
     KNIGP Hyperspec Github
       </span>
-    </a>
-  </div>
+        </a>
+    </div>
 );
 export default SocialsFull;
