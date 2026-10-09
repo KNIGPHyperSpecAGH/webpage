@@ -8,7 +8,7 @@ const ManagementCard = (
     }: {
         name: string;
         role: string;
-        zdjecie: string | undefined;
+        zdjecie?: string;
     }
 ) => {
     return (
@@ -62,17 +62,14 @@ export const AboutPage = () => {
                         <ManagementCard
                             name="Szymon Sanocki"
                             role="Przewodniczący"
-                            zdjecie=""
                         />
                         <ManagementCard
                             name="Ala Berlińska"
                             role="Wiceprzewodnicząca"
-                            zdjecie=""
                         />
                         <ManagementCard
                             name="Michał Stefan"
                             role="Wiceprzewodniczący"
-                            zdjecie=""
                         />
                     </div>
 
@@ -84,12 +81,10 @@ export const AboutPage = () => {
                         <ManagementCard
                             name="Krzysztof Nowakowski"
                             role="Przewodniczący sekcji informatycznej"
-                            zdjecie=""
                         />
                         <ManagementCard
                             name="Miłosz Sumara"
                             role="Przewodniczący sekcji teledetekcyjnej"
-                            zdjecie=""
                         />
                     </div>
                 </div>
