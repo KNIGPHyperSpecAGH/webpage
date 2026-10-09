@@ -1,92 +1,99 @@
 import groupPhoto from "../assets/group_photo.jpg";
-import blazej from "../assets/blazej.jpg";
-import piotr from "../assets/piotr.jpg";
-import natalia from "../assets/natalia.jpg";
-import krzysztof from "../assets/krzysztof.jpg";
-import milosz from "../assets/milosz.jpg";
 
-const ManagementCard = ({
-  name,
-  role,
-  imie,
-}: {
-  name: string;
-  role: string;
-  imie: string;
-}) => {
-  return (
-    <div className="flex flex-col items-center justify-center w-full bg-element  rounded-3xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
-      {/* Image */}
-      <img
-        src={imie}
-        alt={name}
-        className="w-20 h-20 bg-gray-700 rounded-full mb-4"
-      />
-      {/* Text */}
-      <div>
-        <p className="text-white font-bold text-xl">{name}</p>
-        <p className="text-gray-300 text-md">{role}</p>
-      </div>
-    </div>
-  );
+const ManagementCard = (
+    {
+        name,
+        role,
+        zdjecie = undefined,
+    }: {
+        name: string;
+        role: string;
+        zdjecie: string | undefined;
+    }
+) => {
+    return (
+        <div
+            className="flex flex-col items-center justify-center w-full bg-element  rounded-3xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
+            {/* Image */}
+            {zdjecie && <img
+                src={zdjecie}
+                alt={name}
+                className="w-20 h-20 bg-gray-700 rounded-full mb-4"
+            />}
+            {/* Text */}
+            <div>
+                <p className="text-white font-bold text-xl">{name}</p>
+                <p className="text-gray-300 text-md">{role}</p>
+            </div>
+        </div>
+    );
 };
 
-
-
 export const AboutPage = () => {
-  return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-8 pt-20">
-      {/* Section: About */}
-      <div className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-3xl">
-        <p className="text-white text-2xl  lg:w-1/2 text-justify hyphens-auto p-4" lang="pl">
-          Jesteśmy kołem naukowym działającym przy Wydziale Geodezji Górniczej i Inżynierii Środowiska w Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. Zajmujemy się rozwijaniem i popularyzacją technik teledetekcyjnych oraz przetwarzania danych przestrzennych. Naszym celem jest poszerzanie wiedzy, realizacja projektów naukowych oraz integracja studentów zainteresowanych nowoczesnymi technologiami geoinformatycznymi.
-        </p>
-        <img
-          src={groupPhoto}
-          alt="About us"
-          className="rounded-xl shadow-lg lg:w-1/2 w-full h-auto object-cover"
-        />
-      </div>
+    return (
+        <div className="min-h-screen flex flex-col items-center px-4 py-8 pt-20">
+            {/* Section: About */}
+            <div
+                className="w-full max-w-7xl mb-8 bg-element flex lg:flex-row flex-col items-center gap-8 p-8 rounded-3xl">
+                <p className="text-white text-2xl  lg:w-1/2 text-justify hyphens-auto p-4" lang="pl">
+                    Jesteśmy kołem naukowym działającym przy Wydziale Geodezji Górniczej i Inżynierii Środowiska w
+                    Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. Zajmujemy się rozwijaniem i
+                    popularyzacją technik teledetekcyjnych oraz przetwarzania danych przestrzennych. Naszym celem jest
+                    poszerzanie wiedzy, realizacja projektów naukowych oraz integracja studentów zainteresowanych
+                    nowoczesnymi technologiami geoinformatycznymi.
+                </p>
+                <img
+                    src={groupPhoto}
+                    alt="About us"
+                    className="rounded-xl shadow-lg lg:w-1/2 w-full h-auto object-cover"
+                />
+            </div>
 
-      {/* Section: Board */}
-      <div className="w-full py-4">
+            {/* Section: Board */}
+            <div className="w-full py-4">
+                <div className="w-full max-w-7xl mx-auto flex flex-col pt-5">
+                    {/* Title */}
+                    <div className="px-4 text-white font-semibold text-4xl mb-5 text-center">
+                        Nasz zarząd
+                    </div>
 
-        <div className="w-full max-w-7xl mx-auto flex flex-col pt-5">
-          {/* Title */}
-          <div className="px-4 text-white font-semibold text-4xl mb-5 text-center">
-            Nasz zarząd
-          </div>
+                    {/* Grid of cards */}
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+                        <ManagementCard
+                            name="Szymon Sanocki"
+                            role="Przewodniczący"
+                            zdjecie=""
+                        />
+                        <ManagementCard
+                            name="Ala Berlińska"
+                            role="Wiceprzewodnicząca"
+                            zdjecie=""
+                        />
+                        <ManagementCard
+                            name="Michał Stefan"
+                            role="Wiceprzewodniczący"
+                            zdjecie=""
+                        />
+                    </div>
 
-          {/* Grid of cards */}
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-            <ManagementCard
-              name="Piotr Starzyk"
-              role="Przewodniczący"
-              imie={piotr}
-            />
-            <ManagementCard
-              name="Błażej Kiełkowski"
-              role="Wiceprzewodniczący ds. finansów i zasobów ludzkich"
-              imie={blazej}
-            />
-            <ManagementCard
-              name="Natalia Stec"
-              role="Wiceprzewodnicząca ds. promocji i rozwoju"
-              imie={natalia}
-            />
-            <ManagementCard
-              name="Krzysztof Nowakowski"
-              role="Przewodniczący sekcji informatycznej"
-              imie={krzysztof}
-            />
-            <ManagementCard
-              name="Miłosz Sumara"
-              role="Przewodniczący sekcji teledetekcyjnej"
-              imie={milosz}
-            />
-          </div>
+
+                    <div className="px-4 text-white font-semibold text-2xl mt-5 mb-5 text-center">
+                        Sekcje koła
+                    </div>
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+                        <ManagementCard
+                            name="Krzysztof Nowakowski"
+                            role="Przewodniczący sekcji informatycznej"
+                            zdjecie=""
+                        />
+                        <ManagementCard
+                            name="Miłosz Sumara"
+                            role="Przewodniczący sekcji teledetekcyjnej"
+                            zdjecie=""
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
