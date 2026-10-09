@@ -15,6 +15,14 @@ type NewsType = {
 
 const news: NewsType[] = [
     {
+        title: "Rozpoczynamy rekrutację do naszego koła!",
+        description: "W dniu 15 października będziemy na Targach Organizacji Studenckich",
+        image: koloImage,
+        date: new Date("2026-10-15"),
+        ctaLabel: "Formularz zgłoszeniowy",
+        ctaHref: "https://docs.google.com/forms/d/e/1FAIpQLSfYlyhdrVoVufCyALyVn0M_yLbAsy5nWc8x-_9Pj-TUbIvwRw/viewform?usp=dialog",
+        ctaNewPage: true,
+    }, {
         title: "Podpisanie umowy z ArcelorMittal",
         description: "W 2025 udało nam się podpisać umowę z firmą ArcelorMittal ...",
         image: arcelorMittalImage,
