@@ -66,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         </div>
                     )}
 
-                    <p className="text-xl leading-relaxed font-text text-white flex-grow">
+                    <p className="text-xl leading-relaxed font-text text-white flex-grow hyphens-auto text-justify">
                         {description}
                     </p>
                 </div>
@@ -83,11 +83,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {image && (
-                <div className="w-full md:w-1/3 flex-shrink-0">
+                <div className="w-full md:w-1/3 flex-shrink-0 content-center">
                     <img
                         src={image}
                         alt={imageAlt}
-                        className="w-full h-44 md:h-full object-cover rounded-2xl"
+                        className="w-full md:w-full object-cover rounded-2xl"
                     />
                 </div>
             )}

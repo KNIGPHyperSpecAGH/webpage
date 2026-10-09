@@ -18,9 +18,9 @@ export const MainPage: React.FC = () => {
         <NavButton href="kontakt">Dołącz do nas</NavButton>
         </div>
       </div>
-      
+
       {/* Para #1: lewa przyklejona do lewego brzegu, prawa pływa -> prawa jest wyśrodkowana w swojej kolumnie */}
-      <section className="w-full mb-12 lg:mb-16 xl:mb-20">
+      <section className="w-full mb-12 lg:mb-16 xl:mb-20 hyphens-auto text-justify">
         <div className="grid grid-cols-1 2xl:grid-cols-2 gap-8 items-start">
           {/* LEWA (przyklejona) - na lg: start (zaczyna przy lewej krawędzi kolumny) */}
           <div className="w-full lg:justify-self:start lg:pl-0 px-4">
