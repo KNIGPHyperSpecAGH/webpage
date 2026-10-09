@@ -6,34 +6,35 @@ type NewsCardProps = {
     description: string;
     image: string;
     imageAlt?: string;
-    date?: Date;
+    date: Date;
     ctaLabel?: string;
     ctaHref?: string;
+    ctaNewPage?: boolean;
     variant?: "left" | "right";
 };
 
-const months = [
-    "STY", "LUT", "MAR", "KWI", "MAJ", "CZE",
-    "LIP", "SIE", "WRZ", "PAŹ", "LIS", "GRU"
-];
-
-const NewsCard: React.FC<NewsCardProps> = ({
-                                               title,
-                                               description,
-                                               image,
-                                               imageAlt = "",
-                                               date,
-                                               ctaLabel,
-                                               ctaHref,
-                                               variant = "left",
-                                           }) => {
+const NewsCard: React.FC<NewsCardProps> = (
+    {
+        title,
+        description,
+        image,
+        imageAlt = "",
+        date,
+        ctaLabel,
+        ctaHref,
+        ctaNewPage = false,
+        variant = "left",
+    }
+) => {
     const isRight = variant === "right";
 
     let day, month, year;
     if (date) {
-        day = date.getDate();
-        month = months[date.getMonth()];
-        year = date.getFullYear();
+        [day, month, year] = date.toLocaleDateString("pl-PL", {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        }).split(' ');
     }
 
     return (
@@ -74,9 +75,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 </div>
 
                 {ctaLabel && (
-                    <div className={`mt-4 flex w-full md:w-auto justify-center ${isRight ? "md:justify-end" : "md:justify-start"}`}>
+                    <div
+                        className={`mt-4 flex w-full md:w-auto justify-center ${isRight ? "md:justify-end" : "md:justify-start"}`}>
                         {ctaHref ? (
-                            <NavButton href={ctaHref}>{ctaLabel}</NavButton>
+                            <NavButton href={ctaHref} target={ctaNewPage ? "_blank" : "_self"}>
+                                {ctaLabel}
+                            </NavButton>
                         ) : (
                             <NavButton>{ctaLabel}</NavButton>
                         )}
