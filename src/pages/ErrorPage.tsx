@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router";
-import { useState, useEffect } from "react";
-import { Navigation } from "../components/Navigation";
-import { Footer } from "../components/Footer";
+import {useNavigate} from "react-router";
+import {useEffect, useState} from "react";
+import {Navigation} from "../components/Navigation";
+import {Footer} from "../components/Footer";
+import notFoundImage from "../assets/satchat.png";
 
 const messages = [
     "Ups! Ta strona jest poza zasięgiem naszego satelity.",
@@ -21,11 +22,11 @@ export const ErrorPage = () => {
 
     return (
         <div className="min-h-screen flex flex-col bg-secondary text-white">
-            <Navigation />
+            <Navigation/>
             <main className="flex-grow flex flex-col justify-center items-center p-8 text-center max-w-3xl mx-auto">
                 {/* Picture */}
                 <div className="w-full max-w-sm h-64 mb-5">
-                    <img src="/satchat.png" className="object-contain w-full h-full" />
+                    <img src={notFoundImage} className="object-contain w-full h-full" alt={'Not Found Image'}/>
                 </div>
                 <h1 className="text-5xl font-header font-bold mb-2">404 Page Not Found</h1>
                 <p className="text-xl font-text mb-1">{randomMessage}</p>
@@ -37,7 +38,7 @@ export const ErrorPage = () => {
                     Wróć na stronę główną
                 </button>
             </main>
-            <Footer />
+            <Footer/>
         </div>
     );
 };
