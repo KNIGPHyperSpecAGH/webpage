@@ -16,9 +16,9 @@ type NewsType = {
 const news: NewsType[] = [
     {
         title: "Rozpoczynamy rekrutację do naszego koła!",
-        description: "W dniu 15 października będziemy na Targach Organizacji Studenckich",
+        description: "W dniu 14 października będziemy na Targach Organizacji Studenckich",
         image: koloImage,
-        date: new Date("2026-10-15"),
+        date: new Date("2026-10-14"),
         ctaLabel: "Formularz zgłoszeniowy",
         ctaHref: "https://docs.google.com/forms/d/e/1FAIpQLSfYlyhdrVoVufCyALyVn0M_yLbAsy5nWc8x-_9Pj-TUbIvwRw/viewform?usp=dialog",
         ctaNewPage: true,
